@@ -11,6 +11,10 @@ nav:
     - 概率: probability/chapter_4.md
     - 等可能概型（古典概型）: probability/chapter_5.md
     - 条件概率: probability/chapter_6.md
+    - 全概率公式与贝叶斯公式:
+      - 划分: probability/chapter_7_1.md
+      - 全概率公式: probability/chapter_7_2.md
+      - 贝叶斯公式: probability/chapter_7_3.md
 
 repo_url: https://github.com/1216105249/wiki
 
