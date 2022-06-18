@@ -1,7 +1,7 @@
 site_name: Buggg的小屋
 
 nav:
-  - 主页: home.md
+  - 主页: 'home.md'
   - 概率论与数理统计:
     - 简介: probability/0.md
     - 样本空间 随机事件: probability/1.md
@@ -27,7 +27,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
-    - navigation.indexes
     - search.suggest
     - search.share
 
@@ -35,6 +34,7 @@ markdown_extensions:
   - smarty
   - toc:
       permalink: true
+  - admonition
   - codehilite:
       guess_lang: false
       linenums: false
