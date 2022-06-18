@@ -81,5 +81,5 @@ edit_uri: ""
 plugins:
   - git-revision-date
   - git-revision-date-localized:
-    type: date
+      type: date
   - search
