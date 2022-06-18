@@ -25,7 +25,6 @@ theme:
         icon: material/weather-night
         name: 切换暗色模式
   features:
-    - navigation.instant
     - navigation.tabs
     - search.suggest
     - search.share
