@@ -6,6 +6,8 @@ nav:
     - 简介: 概率论与数理统计/简介.md
     - 样本空间 随机事件: 概率论与数理统计/样本空间 随机事件.md
 
+repo_url: https://github.com/1216105249/wiki
+
 theme:
   name: material
   language: zh
@@ -56,6 +58,10 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.tilde
 
+extra_javascript:
+  - 'js/extra.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
 extra:
   generator: false
   social:
@@ -67,10 +73,3 @@ extra:
       name: 邮箱
 
 copyright: Copyright &copy; 2020 - 2021 Buggg的小屋
-
-repo_url: https://github.com/1216105249/wiki
-
-extra_javascript:
-  - 'js/extra.js'
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-
