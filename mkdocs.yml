@@ -3,10 +3,10 @@ site_name: Buggg的小屋
 nav:
   - 主页: 
     - 简介: index.md
-    - 关于: about.md
   - 概率论与数理统计:
     - 简介: probability/index.md
     - 样本空间 随机事件: probability/chapter_1.md
+    - 事件的相互关系及运算: probability/chapter_2.md
 
 repo_url: https://github.com/1216105249/wiki
 
