@@ -14,4 +14,4 @@ $f_n(A)=\frac{n_A}{n}$
 
 - $0\leq f_n(A)\leq1$
 - $f_n(S)=1$
-- 若$A_1,A_2,...,A_k$两两互不相容，则$$f_n(\bigcup_{i=1}^{k}{A_i}=\sum_{i=1}^{k}{f_n(A_i)})$$
+- 若$A_1,A_2,...,A_k$两两互不相容，则$f_n(\bigcup_{i=1}^{k}{A_i}=\sum_{i=1}^{k}{f_n(A_i)})$

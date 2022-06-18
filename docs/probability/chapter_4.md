@@ -12,4 +12,4 @@
 > 对每个事件$A$，定义P(A)，满足：
 > 1. 非负性：$P(A)\geq0$
 > 2. 规范性：$P(S)=1$
-> 3. 可列可加性：$A_1,A_2,...$两两互斥，即$A_iA_j=\phi,i\neq j$，则$$P(\bigcup_{i=1}^{\infty}{A_i}=\sum_{i=1}^{\infty}{P(A_i)})$$
+> 3. 可列可加性：$A_1,A_2,...$两两互斥，即$A_iA_j=\phi,i\neq j$，则$P(\bigcup_{i=1}^{\infty}{A_i}=\sum_{i=1}^{\infty}{P(A_i)})$
