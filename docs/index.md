@@ -1,17 +1,11 @@
-# 欢迎来到Buggg的小屋
+# 欢迎来到**Buggg的小屋**
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+欢迎访问B站账号：[Bug自动机]("https://space.bilibili.com/176929110")
 
-## Commands
+## 这是哪里
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+这是Buggg的小屋捏，Buggg会在这里发布一些文章捏
 
-## Project layout
+## Buggg是谁
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Buggg就是Bug哥哥捏
