@@ -12,6 +12,8 @@
     - $A \cup \overline{A}=S,A\overline{A}=\phi,\overline{\overline{A}}=A$
     - $A-B=A\overline{B}=A \cup B-B=A-AB$
 
+- - - - - -
+
 ## 事件的运算定理
 
 - 交换律：$A\cup B=B\cup A,A\cap B=B\cap A$
