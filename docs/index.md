@@ -1,6 +1,6 @@
-# 欢迎来到**Buggg的小屋**
+# 欢迎来到 Buggg的小屋
 
-欢迎访问B站账号：[Bug自动机]("https://space.bilibili.com/176929110")
+欢迎访问B站主页：[Bug自动机]("https://space.bilibili.com/176929110")
 
 ## 这是哪里
 
