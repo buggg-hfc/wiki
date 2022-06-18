@@ -1,10 +1,10 @@
 site_name: Buggg的小屋
 
 nav:
-  - 主页: 主页/简介.md
+  - 主页: home/0.md
   - 概率论与数理统计:
-    - 简介: 概率论与数理统计/简介.md
-    - 样本空间 随机事件: 概率论与数理统计/样本空间 随机事件.md
+    - 简介: probability/0.md
+    - 样本空间 随机事件: probability/1.md
 
 repo_url: https://github.com/1216105249/wiki
 
