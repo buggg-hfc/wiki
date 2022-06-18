@@ -79,7 +79,6 @@ copyright: Copyright &copy; 2020 - 2021 Buggg的小屋
 edit_uri: ""
 
 plugins:
-  - git-revision-date
   - git-revision-date-localized:
-      type: date
+      type: iso_date
   - search
