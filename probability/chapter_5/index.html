@@ -13,7 +13,7 @@
     
     
       
-        <title>事件的相互关系及运算 - Buggg的小屋</title>
+        <title>等可能概型（古典概型） - Buggg的小屋</title>
       
     
     
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              事件的相互关系及运算
+              等可能概型（古典概型）
             
           </span>
         </div>
@@ -382,59 +382,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          事件的相互关系及运算
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../chapter_2/" class="md-nav__link">
         事件的相互关系及运算
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    事件的关系
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    事件的运算定理
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -472,11 +424,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../chapter_5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          等可能概型（古典概型）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         等可能概型（古典概型）
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -516,14 +509,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    事件的关系
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    事件的运算定理
+    定义
   </a>
   
 </li>
@@ -542,29 +528,13 @@
                 
 
 
-<h1 id="_1">事件的相互关系及运算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">事件的关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A \subset B</span><script type="math/tex">A \subset B</script></span>：<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>发生<span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span><span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>发生</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A=B \Leftrightarrow \begin{cases}A \subset B\\ B \subset A\end{cases}</span><script type="math/tex">A=B \Leftrightarrow \begin{cases}A \subset B\\ B \subset A\end{cases}</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A \cup B = \{x|x\in A 或 x\in B\}</span><script type="math/tex">A \cup B = \{x|x\in A 或 x\in B\}</script></span>：<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>与<span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>至少有一个发生</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A \cap B = \{x|x\in A 且 x\in B\}</span><script type="math/tex">A \cap B = \{x|x\in A 且 x\in B\}</script></span>，又作<span class="arithmatex"><span class="MathJax_Preview">A·B</span><script type="math/tex">A·B</script></span>，<span class="arithmatex"><span class="MathJax_Preview">AB</span><script type="math/tex">AB</script></span>：<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>与<span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>同时发生</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">AB=\phi</span><script type="math/tex">AB=\phi</script></span>，称为<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>与<span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>不相容或互斥</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A-B=\{x|x\in A 且 x\notin B\}</span><script type="math/tex">A-B=\{x|x\in A 且 x\notin B\}</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\overline{A}</span><script type="math/tex">\overline{A}</script></span><ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A \cup \overline{A}=S,A\overline{A}=\phi,\overline{\overline{A}}=A</span><script type="math/tex">A \cup \overline{A}=S,A\overline{A}=\phi,\overline{\overline{A}}=A</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A-B=A\overline{B}=A \cup B-B=A-AB</span><script type="math/tex">A-B=A\overline{B}=A \cup B-B=A-AB</script></span></li>
-</ul>
-</li>
-</ul>
-<hr />
-<h2 id="_3">事件的运算定理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>交换律：<span class="arithmatex"><span class="MathJax_Preview">A\cup B=B\cup A,A\cap B=B\cap A</span><script type="math/tex">A\cup B=B\cup A,A\cap B=B\cap A</script></span></li>
-<li>结合律：<span class="arithmatex"><span class="MathJax_Preview">A\cup(B\cup C)=(A\cup B)\cup C,A\cap(B\cap C)=(A\cap B)\cap C</span><script type="math/tex">A\cup(B\cup C)=(A\cup B)\cup C,A\cap(B\cap C)=(A\cap B)\cap C</script></span></li>
-<li>分配律：<span class="arithmatex"><span class="MathJax_Preview">A\cup(B\cap C)=(A\cup B)\cap(A\cup C),A\cap(B\cup C)=(A\cap B)\cup(A\cap C)</span><script type="math/tex">A\cup(B\cap C)=(A\cup B)\cap(A\cup C),A\cap(B\cup C)=(A\cap B)\cup(A\cap C)</script></span></li>
-<li>对偶律：<span class="arithmatex"><span class="MathJax_Preview">\overline{A\cup B}=\overline{A}\cap\overline{B},\overline{A\cap B}=\overline{A}\cup\overline{B}</span><script type="math/tex">\overline{A\cup B}=\overline{A}\cap\overline{B},\overline{A\cap B}=\overline{A}\cup\overline{B}</script></span></li>
-</ul>
+<h1 id="_1">等可能概型（古典概型）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>样本空间<span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>中样本点有限（有限性）</p>
+<p>出现每一个样本点的概率相等（等可能性）</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">P(A)=\frac{A中样本点数}{S中样本点数}</span><script type="math/tex">P(A)=\frac{A中样本点数}{S中样本点数}</script></span></p>
+</blockquote>
 
   <hr>
 <div class="md-source-file">
@@ -591,7 +561,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../chapter_1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 样本空间 随机事件" rel="prev">
+        <a href="../chapter_4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 概率" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -600,26 +570,11 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              样本空间 随机事件
+              概率
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../chapter_3/" class="md-footer__link md-footer__link--next" aria-label="下一页: 频率" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              频率
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
