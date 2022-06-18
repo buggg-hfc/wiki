@@ -27,6 +27,7 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
+    - navigation.indexes
     - search.suggest
     - search.share
 
@@ -34,7 +35,6 @@ markdown_extensions:
   - smarty
   - toc:
       permalink: true
-  - admonition
   - codehilite:
       guess_lang: false
       linenums: false
@@ -42,7 +42,20 @@ markdown_extensions:
   - meta
   - def_list
   - pymdownx.arithmatex
-  
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
 
 extra_javascript:
   - 'js/extra.js'
