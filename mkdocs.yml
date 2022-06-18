@@ -1,12 +1,10 @@
 site_name: Buggg的小屋
 
 nav:
-  - 主页: index.md
-  - 关于: about.md
+  - 主页: 
+    - 主页: home/index.md
   - 概统:
-    - 概统简介: section/index.md
-    - 知识点1: section/page1.md
-    - 知识点2: section/page2.md
+    - 概统简介: probability_and_statistics/index.md
 
 theme:
   name: material
