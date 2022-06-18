@@ -30,6 +30,8 @@ theme:
     - navigation.tabs
     - search.suggest
     - search.share
+  icon:
+    repo: fontawesome/brands/github-alt
 
 markdown_extensions:
   - smarty
@@ -73,3 +75,11 @@ extra:
       name: 邮箱
 
 copyright: Copyright &copy; 2020 - 2021 Buggg的小屋
+
+edit_uri: ""
+
+plugins:
+  - git-revision-date
+  - git-revision-date-localized:
+    type: date
+  - search
