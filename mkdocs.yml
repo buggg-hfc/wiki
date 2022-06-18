@@ -1,8 +1,7 @@
 site_name: Buggg的小屋
 
 nav:
-  - 主页:
-    - 简介: index/index.md
+  - 主页: index/index.md
   - 关于:
     - 简介: about/index.md
   - 概统:
