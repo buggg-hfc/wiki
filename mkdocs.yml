@@ -2,7 +2,7 @@ site_name: Buggg的小屋
 
 nav:
   - 主页: 
-    - 简介: home/index.md
+    - 简介: index/index.md
   - 概率论与数理统计:
     - 简介: probability/index.md
     - 样本空间 随机事件: probability/chapter_1.md
