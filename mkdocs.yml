@@ -2,9 +2,10 @@ site_name: Buggg的小屋
 
 nav:
   - 主页: 
-    - 主页: home/index.md
-  - 概统:
-    - 概统简介: probability_and_statistics/index.md
+    - 主页: 主页/0主页.md
+  - 概率论与数理统计:
+    - 简介: 概率论与数理统计/0简介.md
+    - 样本空间 随机事件: 概率论与数理统计/1样本空间 随机事件.md
 
 theme:
   name: material
