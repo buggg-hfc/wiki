@@ -16,6 +16,7 @@ nav:
       - 全概率公式: probability/chapter_7_2.md
       - 贝叶斯公式: probability/chapter_7_3.md
     - 事件独立性: probability/chapter_8.md
+    - 随机变量: probability/chapter_9.md
 
 repo_url: https://github.com/1216105249/wiki
 
