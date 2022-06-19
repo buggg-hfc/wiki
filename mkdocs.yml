@@ -17,6 +17,12 @@ nav:
       - 贝叶斯公式: probability/chapter_7_3.md
     - 事件独立性: probability/chapter_8.md
     - 随机变量: probability/chapter_9.md
+    - 离散型随机变量: probability/chapter_10.md
+    - 分布函数: probability/chapter_11.md
+    - 连续型随机变量及其概率密度: probability/chapter_12.md
+    - 均匀分布与指数分布: probability/chapter_13.md
+    - 正态分布: probability/chapter_14.md
+    - 随机变量函数的分布: probability/chapter_15.md
 
 repo_url: https://github.com/1216105249/wiki
 
