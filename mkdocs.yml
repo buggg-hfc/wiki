@@ -23,6 +23,8 @@ nav:
     - 均匀分布与指数分布: probability/chapter_13.md
     - 正态分布: probability/chapter_14.md
     - 随机变量函数的分布: probability/chapter_15.md
+  - 算法专题报告:
+    - 自动机入门: algorithm/report_1.md
 
 repo_url: https://github.com/1216105249/wiki
 
