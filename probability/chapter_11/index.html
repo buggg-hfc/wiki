@@ -596,9 +596,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          分布函数
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         分布函数
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    用途
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -749,6 +794,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    用途
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -762,13 +836,35 @@
 
 
 <h1 id="_1">分布函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>随机变量 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>，对任意实数 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，称函数 <span class="arithmatex"><span class="MathJax_Preview">F(x)=P(X\leq x)</span><script type="math/tex">F(x)=P(X\leq x)</script></span> 为 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 的概率分布函数，简称 <strong>分布函数</strong></p>
+</blockquote>
+<details class="说明" open="open">
+<summary>说明</summary>
+<p>任何随机变量都有相应的分布函数
+<span class="arithmatex"><span class="MathJax_Preview">F(x)</span><script type="math/tex">F(x)</script></span> 的几何意义：<span class="arithmatex"><span class="MathJax_Preview">F(x)=P(X\in(-\infty,x])</span><script type="math/tex">F(x)=P(X\in(-\infty,x])</script></span></p>
+</details>
+<h2 id="_3">用途<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>分布函数可以给出随机变量落入任意一个范围的可能性</strong></p>
+<p>一般地，离散型随机变量的分布函数为阶梯函数</p>
+<p>设离散型随机变量 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 的分布律为 <span class="arithmatex"><span class="MathJax_Preview">P\{X=x_k\}=p_k,\ k=1,2,\cdots</span><script type="math/tex">P\{X=x_k\}=p_k,\ k=1,2,\cdots</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 的分布函数为 <span class="arithmatex"><span class="MathJax_Preview">F(x)=\sum_{x_k\leq x}{p_k}</span><script type="math/tex">F(x)=\sum_{x_k\leq x}{p_k}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">F(x)</span><script type="math/tex">F(x)</script></span> 在<span class="arithmatex"><span class="MathJax_Preview">x=x_k,\ (k=1,2,\cdots)</span><script type="math/tex">x=x_k,\ (k=1,2,\cdots)</script></span> 处有跳跃，其跳跃值为 <span class="arithmatex"><span class="MathJax_Preview">p_k=P\{X=x_k\}</span><script type="math/tex">p_k=P\{X=x_k\}</script></span></p>
+<h2 id="_4">性质<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">0\leq F(x)\leq 1</span><script type="math/tex">0\leq F(x)\leq 1</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">F(x)</span><script type="math/tex">F(x)</script></span> 单调不减</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">F(-\infty)=0,\ F(+\infty)=1</span><script type="math/tex">F(-\infty)=0,\ F(+\infty)=1</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">F(x)</span><script type="math/tex">F(x)</script></span> 是右连续函数，即 <span class="arithmatex"><span class="MathJax_Preview">F(x+0)=F(x)</span><script type="math/tex">F(x+0)=F(x)</script></span></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-06-19 15:52:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-06-21 02:59:47</span>
       
     
   </small>
