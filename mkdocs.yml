@@ -26,6 +26,7 @@ nav:
   - 算法专题报告:
     - 简介: algorithm/index.md
     - 自动机入门: algorithm/report_1.md
+    - 最大流入门: algorithm/report_2.md
 
 repo_url: https://github.com/1216105249/wiki
 
