@@ -25,8 +25,8 @@ nav:
     - 随机变量函数的分布: probability/chapter_15.md
   - 算法专题报告:
     - 简介: algorithm/index.md
-    - 自动机入门: algorithm/report_1.md
-    - 最大流入门: algorithm/report_2.md
+    - 自动机入门: algorithm/自动机入门.md
+    - 最大流入门: algorithm/最大流入门.md
   - 高中数学:
     - 简介: math/index.md
     - 三角函数: math/三角函数.md
