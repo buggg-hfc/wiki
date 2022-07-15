@@ -1,0 +1,2701 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+    
+    
+      
+        <title>自动机入门 - Buggg的小屋</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#acac" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Buggg的小屋" class="md-header__button md-logo" aria-label="Buggg的小屋" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Buggg的小屋
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              自动机入门
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="切换亮色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换亮色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="切换暗色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换暗色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/1216105249/wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        主页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-tabs__link">
+        概率论与数理统计
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        算法专题报告
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/" class="md-tabs__link">
+        中学知识
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Buggg的小屋" class="md-nav__button md-logo" aria-label="Buggg的小屋" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Buggg的小屋
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/1216105249/wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          主页
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="主页" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          主页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          概率论与数理统计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="概率论与数理统计" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          概率论与数理统计
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_1/" class="md-nav__link">
+        样本空间 随机事件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_2/" class="md-nav__link">
+        事件的相互关系及运算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_3/" class="md-nav__link">
+        频率
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_4/" class="md-nav__link">
+        概率
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_5/" class="md-nav__link">
+        等可能概型(古典概型)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_6/" class="md-nav__link">
+        条件概率
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          全概率公式与贝叶斯公式
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="全概率公式与贝叶斯公式" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          全概率公式与贝叶斯公式
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_7_1/" class="md-nav__link">
+        划分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_7_2/" class="md-nav__link">
+        全概率公式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_7_3/" class="md-nav__link">
+        贝叶斯公式
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_8/" class="md-nav__link">
+        事件独立性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_9/" class="md-nav__link">
+        随机变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_10/" class="md-nav__link">
+        离散型随机变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_11/" class="md-nav__link">
+        分布函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_12/" class="md-nav__link">
+        连续型随机变量及其概率密度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_13/" class="md-nav__link">
+        均匀分布与指数分布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_14/" class="md-nav__link">
+        正态分布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/chapter_15/" class="md-nav__link">
+        随机变量函数的分布
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          算法专题报告
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="算法专题报告" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          算法专题报告
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          自动机入门
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        自动机入门
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ——“自动机”入门
+  </a>
+  
+    <nav class="md-nav" aria-label="——“自动机”入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    计算机学院21级 何丰辰
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    写在前面
+  </a>
+  
+    <nav class="md-nav" aria-label="写在前面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    前置知识
+  </a>
+  
+    <nav class="md-nav" aria-label="前置知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    字符集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    字符串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    子串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    子序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    后缀
+  </a>
+  
+    <nav class="md-nav" aria-label="后缀">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    后缀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    真后缀
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    前缀
+  </a>
+  
+    <nav class="md-nav" aria-label="前缀">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    前缀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    真前缀
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    字典序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    回文串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    什么是自动机
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    自动机的概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    自动机的分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    自动机的应用案例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    常用自动机
+  </a>
+  
+    <nav class="md-nav" aria-label="常用自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie" class="md-nav__link">
+    Trie
+  </a>
+  
+    <nav class="md-nav" aria-label="Trie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_1" class="md-nav__link">
+    什么是Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie_2" class="md-nav__link">
+    Trie的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie_3" class="md-nav__link">
+    Trie的理论实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie_4" class="md-nav__link">
+    Trie的代码实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp" class="md-nav__link">
+    KMP算法
+  </a>
+  
+    <nav class="md-nav" aria-label="KMP算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kmp_1" class="md-nav__link">
+    什么是KMP算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_2" class="md-nav__link">
+    KMP算法的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    单模式匹配的朴素做法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    什么是前缀函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    计算前缀函数的朴素算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    计算前缀函数的高效算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_3" class="md-nav__link">
+    KMP算法的理论实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_4" class="md-nav__link">
+    KMP算法的代码实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac" class="md-nav__link">
+    AC自动机
+  </a>
+  
+    <nav class="md-nav" aria-label="AC自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ac_1" class="md-nav__link">
+    什么是AC自动机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_2" class="md-nav__link">
+    AC自动机的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_3" class="md-nav__link">
+    AC自动机的理论实现
+  </a>
+  
+    <nav class="md-nav" aria-label="AC自动机的理论实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_5" class="md-nav__link">
+    构建Trie树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    构造失配指针
+  </a>
+  
+    <nav class="md-nav" aria-label="构造失配指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failfail" class="md-nav__link">
+    failfail 指针的基础思想
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failfail-next" class="md-nav__link">
+    failfail 指针与next指针的比较
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_4" class="md-nav__link">
+    AC自动机的代码实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    总结与拓展
+  </a>
+  
+    <nav class="md-nav" aria-label="总结与拓展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    自动机的形式化定义
+  </a>
+  
+    <nav class="md-nav" aria-label="自动机的形式化定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_6" class="md-nav__link">
+    Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_5" class="md-nav__link">
+    KMP算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_5" class="md-nav__link">
+    AC自动机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    拓展1：常用自动机的深入
+  </a>
+  
+    <nav class="md-nav" aria-label="拓展1：常用自动机的深入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_7" class="md-nav__link">
+    Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_6" class="md-nav__link">
+    KMP算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    拓展2：其他自动机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    全文结束，谢谢阅读
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%80%E5%A4%A7%E6%B5%81%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        最大流入门
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          中学知识
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="中学知识" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          中学知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          初中
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="初中" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          初中
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../中学/初中/物理.md" class="md-nav__link">
+        物理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          高中
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="高中" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          高中
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_1">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数学" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E6%95%B0%E5%AD%A6/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        三角函数
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_2">
+          政治
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="政治" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          政治
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E6%94%BF%E6%B2%BB/%E7%BB%8F%E6%B5%8E%E5%B8%B8%E8%AF%86/%E7%BB%8F%E6%B5%8E%E5%B8%B8%E8%AF%86/" class="md-nav__link">
+        经济常识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E6%94%BF%E6%B2%BB/%E5%93%B2%E5%AD%A6%E5%B8%B8%E8%AF%86/%E5%93%B2%E5%AD%A6%E5%B8%B8%E8%AF%86/" class="md-nav__link">
+        哲学常识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E6%94%BF%E6%B2%BB/%E6%94%BF%E6%B2%BB%E5%B8%B8%E8%AF%86/%E6%94%BF%E6%B2%BB%E5%B8%B8%E8%AF%86/" class="md-nav__link">
+        政治常识
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_3" type="checkbox" id="__nav_4_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_3">
+          地理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="地理" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          地理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E5%9C%B0%E7%90%86/%E8%87%AA%E7%84%B6%E5%9C%B0%E7%90%86/%E8%87%AA%E7%84%B6%E5%9C%B0%E7%90%86/" class="md-nav__link">
+        自然地理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E5%9C%B0%E7%90%86/%E4%BA%BA%E6%96%87%E5%9C%B0%E7%90%86/%E4%BA%BA%E6%96%87%E5%9C%B0%E7%90%86/" class="md-nav__link">
+        人文地理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E5%9C%B0%E7%90%86/%E6%8B%93%E5%B1%95%E9%83%A8%E5%88%86/%E6%8B%93%E5%B1%95%E9%83%A8%E5%88%86/" class="md-nav__link">
+        拓展部分
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%AD%E5%AD%A6/%E9%AB%98%E4%B8%AD/%E5%9C%B0%E7%90%86/%E4%B8%93%E9%A2%98/%E4%B8%93%E9%A2%98/" class="md-nav__link">
+        专题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ——“自动机”入门
+  </a>
+  
+    <nav class="md-nav" aria-label="——“自动机”入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    计算机学院21级 何丰辰
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    写在前面
+  </a>
+  
+    <nav class="md-nav" aria-label="写在前面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    前置知识
+  </a>
+  
+    <nav class="md-nav" aria-label="前置知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    字符集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    字符串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    子串
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    子序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    后缀
+  </a>
+  
+    <nav class="md-nav" aria-label="后缀">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    后缀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    真后缀
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    前缀
+  </a>
+  
+    <nav class="md-nav" aria-label="前缀">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    前缀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    真前缀
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    字典序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    回文串
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    什么是自动机
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    自动机的概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    自动机的分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    自动机的应用案例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    常用自动机
+  </a>
+  
+    <nav class="md-nav" aria-label="常用自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie" class="md-nav__link">
+    Trie
+  </a>
+  
+    <nav class="md-nav" aria-label="Trie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_1" class="md-nav__link">
+    什么是Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie_2" class="md-nav__link">
+    Trie的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie_3" class="md-nav__link">
+    Trie的理论实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trie_4" class="md-nav__link">
+    Trie的代码实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp" class="md-nav__link">
+    KMP算法
+  </a>
+  
+    <nav class="md-nav" aria-label="KMP算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kmp_1" class="md-nav__link">
+    什么是KMP算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_2" class="md-nav__link">
+    KMP算法的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    单模式匹配的朴素做法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    什么是前缀函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    计算前缀函数的朴素算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    计算前缀函数的高效算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_3" class="md-nav__link">
+    KMP算法的理论实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_4" class="md-nav__link">
+    KMP算法的代码实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac" class="md-nav__link">
+    AC自动机
+  </a>
+  
+    <nav class="md-nav" aria-label="AC自动机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ac_1" class="md-nav__link">
+    什么是AC自动机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_2" class="md-nav__link">
+    AC自动机的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_3" class="md-nav__link">
+    AC自动机的理论实现
+  </a>
+  
+    <nav class="md-nav" aria-label="AC自动机的理论实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_5" class="md-nav__link">
+    构建Trie树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    构造失配指针
+  </a>
+  
+    <nav class="md-nav" aria-label="构造失配指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failfail" class="md-nav__link">
+    failfail 指针的基础思想
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failfail-next" class="md-nav__link">
+    failfail 指针与next指针的比较
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_4" class="md-nav__link">
+    AC自动机的代码实现
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    总结与拓展
+  </a>
+  
+    <nav class="md-nav" aria-label="总结与拓展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    自动机的形式化定义
+  </a>
+  
+    <nav class="md-nav" aria-label="自动机的形式化定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_6" class="md-nav__link">
+    Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_5" class="md-nav__link">
+    KMP算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac_5" class="md-nav__link">
+    AC自动机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    拓展1：常用自动机的深入
+  </a>
+  
+    <nav class="md-nav" aria-label="拓展1：常用自动机的深入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trie_7" class="md-nav__link">
+    Trie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kmp_6" class="md-nav__link">
+    KMP算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    拓展2：其他自动机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    全文结束，谢谢阅读
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="acac">AC自动机=自动AC机？<a class="headerlink" href="#acac" title="Permanent link">&para;</a></h1>
+<h3 id="_1">——“自动机”入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="21">计算机学院21级 何丰辰<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
+<details class="配套视频" open="open">
+<summary>配套视频</summary>
+<p><a href="https://www.bilibili.com/video/BV1XR4y1j7uW">自动机入门</a></p>
+</details>
+<hr />
+<h2 id="_2">写在前面<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">简介<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>自动机是OI、计算机科学中被广泛使用的一个数学模型，其思想在许多字符串算法中都有涉及，因此在学习一些字符串算法前先完成自动机的学习将有助于理解上述算法。本文将由浅入深介绍自动机的基础概念并讲解三种常用的自动机：Trie、KMP和AC自动机。</p>
+<h3 id="_4">前置知识<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="_5">字符集<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>一个 <strong>字符集</strong> <span class="arithmatex"><span class="MathJax_Preview">\sum</span><script type="math/tex">\sum</script></span> 是一个建立了全序关系的集合，也就是说，<span class="arithmatex"><span class="MathJax_Preview">\sum</span><script type="math/tex">\sum</script></span> 中的任意两个不同的元素 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span> 都可以比较大小，要么 <span class="arithmatex"><span class="MathJax_Preview">\alpha&lt;\beta</span><script type="math/tex">\alpha<\beta</script></span>，要么 <span class="arithmatex"><span class="MathJax_Preview">\beta&lt;\alpha</span><script type="math/tex">\beta<\alpha</script></span>。字符集 <span class="arithmatex"><span class="MathJax_Preview">\sum</span><script type="math/tex">\sum</script></span> 中的元素称为字符。</p>
+<h4 id="_6">字符串<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>一个 <strong>字符串</strong> <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 是将 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 个字符顺次排列形成的序列，<span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 称为 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的长度，表示为 <span class="arithmatex"><span class="MathJax_Preview">|S|</span><script type="math/tex">|S|</script></span>。<span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的第 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 个字符表示为 <span class="arithmatex"><span class="MathJax_Preview">S[i]</span><script type="math/tex">S[i]</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">S[i-1]</span><script type="math/tex">S[i-1]</script></span>。</p>
+<h4 id="_7">子串<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的 <strong>子串</strong> <span class="arithmatex"><span class="MathJax_Preview">S[i \cdots j]，i \leq j</span><script type="math/tex">S[i \cdots j]，i \leq j</script></span>，表示 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 串中从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 这一段，也就是顺次排列 <span class="arithmatex"><span class="MathJax_Preview">S[i],S[i+1],\cdots,S[j]</span><script type="math/tex">S[i],S[i+1],\cdots,S[j]</script></span> 形成的字符串。</p>
+<p>有时也会用 <span class="arithmatex"><span class="MathJax_Preview">S[i \cdots j]，i&gt;j</span><script type="math/tex">S[i \cdots j]，i>j</script></span> 来表示空串。</p>
+<h4 id="_8">子序列<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的 <strong>子序列</strong> 是从 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 中将若干元素提取出来并不改变相对位置形成的序列，即 <span class="arithmatex"><span class="MathJax_Preview">S[p_1],S[p_2],\cdots,S[p_k]，1 \leq p_1&lt;p_2&lt;\cdots&lt;p_k \leq |S|</span><script type="math/tex">S[p_1],S[p_2],\cdots,S[p_k]，1 \leq p_1<p_2<\cdots<p_k \leq |S|</script></span>。</p>
+<h4 id="_9">后缀<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h5 id="_10">后缀<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
+<p><strong>后缀</strong> 是指从某个位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始到整个字符串末尾结束的一个特殊子串。字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开头的后缀表示为 <span class="arithmatex"><span class="MathJax_Preview">Suffix(S,i)</span><script type="math/tex">Suffix(S,i)</script></span>，也就是 <span class="arithmatex"><span class="MathJax_Preview">Suffix(S,i)=S[i \cdots |S|-1]</span><script type="math/tex">Suffix(S,i)=S[i \cdots |S|-1]</script></span>。</p>
+<h5 id="_11">真后缀<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
+<p><strong>真后缀</strong> 指除了 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 本身的 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的后缀。</p>
+<h4 id="_12">前缀<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h5 id="_13">前缀<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h5>
+<p><strong>前缀</strong> 是指从字符串首开始到某个位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 结束的一个特殊子串。字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的以<span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 结尾的前缀表示为 <span class="arithmatex"><span class="MathJax_Preview">Prefix(S,i)</span><script type="math/tex">Prefix(S,i)</script></span>，也就是 <span class="arithmatex"><span class="MathJax_Preview">Prefix(S,i)=S[0 \cdots i]</span><script type="math/tex">Prefix(S,i)=S[0 \cdots i]</script></span>。</p>
+<h5 id="_14">真前缀<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
+<p><strong>真前缀</strong> 指除了 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 本身的 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的前缀。</p>
+<h4 id="_15">字典序<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p><strong>字典序</strong> 指以第 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 个字符作为第 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 关键字进行大小比较，空字符小于字符集内任何字符（即：<span class="arithmatex"><span class="MathJax_Preview">a&lt;aa</span><script type="math/tex">a<aa</script></span>）。</p>
+<h4 id="_16">回文串<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p><strong>回文串</strong> 是正者和倒着相同的字符串，即满足 <span class="arithmatex"><span class="MathJax_Preview">\forall 1 \leq i \leq |s|，s[i]=s[|s|+1-i]</span><script type="math/tex">\forall 1 \leq i \leq |s|，s[i]=s[|s|+1-i]</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>。</p>
+<hr />
+<h2 id="_17">什么是自动机<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_18">自动机的概念<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>自动机是一个对 <strong>信号序列</strong> 进行 <strong>判定</strong> 的数学模型。</p>
+<ul>
+<li>“信号序列”指一连串有顺序的信号，例如字符串从前到后的每一个字符、数组从1到n的每一个数、数从高到低的每一位等</li>
+<li>“判定”指针对某一命题给出或真或假的回答</li>
+</ul>
+<p>需要注意的是：自动机既不是算法，也不是数据结构。因此，实现同一个自动机的方法可能有很多种。</p>
+<h3 id="_19">自动机的分类<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DFA(Deterministic Finite Automaton, 确定有限状态自动机)</li>
+<li>NFA(Nondeterministic Finite Automata, 非确定自动机)</li>
+</ul>
+<p>在OI中所说的“自动机”一般都指DFA，即“确定有限状态自动机”。</p>
+<h3 id="_20">自动机的应用案例<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<ul>
+<li>判定一个二进制数是奇数还是偶数</li>
+<li>判定一个字符串是否回文</li>
+<li>判定一个字符串是不是某个特定字符串的子序列等等</li>
+</ul>
+<p>因此，自动机常用于解决与字符串相关的问题：</p>
+<ul>
+<li>字符串匹配问题</li>
+<li>子串相关问题</li>
+<li>前缀/后缀相关问题</li>
+<li>回文串相关问题</li>
+<li>子序列相关问题</li>
+</ul>
+<hr />
+<h2 id="_21">常用自动机<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<h3 id="trie">Trie<a class="headerlink" href="#trie" title="Permanent link">&para;</a></h3>
+<h4 id="trie_1">什么是Trie<a class="headerlink" href="#trie_1" title="Permanent link">&para;</a></h4>
+<p>Trie又名字典树，顾名思义，就是一个像字典一样的树。</p>
+<h4 id="trie_2">Trie的作用<a class="headerlink" href="#trie_2" title="Permanent link">&para;</a></h4>
+<p>Trie是一种能够高效地存储和查找字符串集合的数据结构。</p>
+<h4 id="trie_3">Trie的理论实现<a class="headerlink" href="#trie_3" title="Permanent link">&para;</a></h4>
+<p>Trie的结构很简单，我们用 <span class="arithmatex"><span class="MathJax_Preview">\delta(u,c)</span><script type="math/tex">\delta(u,c)</script></span> 表示结点 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span> 字符指向的下一个结点，或者说是结点 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 代表的字符串后面添加一个字符 <span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span> 形成的字符串的结点。</p>
+<p>需要注意的是：<span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span> 的取值范围和字符集大小相关，不一定是 <span class="arithmatex"><span class="MathJax_Preview">0\sim26</span><script type="math/tex">0\sim26</script></span>。</p>
+<p>有时需要标记插入进Trie的是哪些字符串，每次插入完成时在这个字符串所代表的结点处打上标记即可。</p>
+<h4 id="trie_4">Trie的代码实现<a class="headerlink" href="#trie_4" title="Permanent link">&para;</a></h4>
+<p>结构体封装的Trie模板：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">trie</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">son</span><span class="p">[</span><span class="mi">100010</span><span class="p">][</span><span class="mi">256</span><span class="p">],</span><span class="n">cnt</span><span class="p">[</span><span class="mi">100010</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="n">idx</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 插入字符串</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 从根节点开始</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"> </span><span class="c1">// 遍历字符串</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="o">=</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="c1">// 当前字符的ASCII码值</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">son</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">u</span><span class="p">])</span><span class="n">son</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">u</span><span class="p">]</span><span class="o">=++</span><span class="n">idx</span><span class="p">;</span><span class="w"> </span><span class="c1">// 如果结点不存在就创建</span>
+<span class="w">            </span><span class="n">p</span><span class="o">=</span><span class="n">son</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">u</span><span class="p">];</span><span class="w"> </span><span class="c1">// 进入下一个结点</span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">cnt</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[]){</span><span class="w"> </span><span class="c1">// 查找字符串</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="o">=</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">son</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">u</span><span class="p">])</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">p</span><span class="o">=</span><span class="n">son</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">u</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">p</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h3 id="kmp">KMP算法<a class="headerlink" href="#kmp" title="Permanent link">&para;</a></h3>
+<h4 id="kmp_1">什么是KMP算法<a class="headerlink" href="#kmp_1" title="Permanent link">&para;</a></h4>
+<p>KMP是由Knuth、Pratt和Morris在1977年共同发布的一个算法。</p>
+<h4 id="kmp_2">KMP算法的作用<a class="headerlink" href="#kmp_2" title="Permanent link">&para;</a></h4>
+<p>KMP算法能够高效地进行单模式匹配（即在文本串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 中查找模式串 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>）。</p>
+<h4 id="_22">单模式匹配的朴素做法<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<p>对于在文本串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 中查找模式串 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 位置的问题（即单模式匹配），我们最先想到的是通过双重循环实现，外层循环遍历 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的每一个下标，内层循环遍历 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 的每一个下标，依次进行比较即可。</p>
+<p>代码实现如下：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// find p[] in s[]</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">];</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="mi">-1</span><span class="p">]</span><span class="o">!=</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span><span class="w"></span>
+<span class="w">            </span><span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>该算法的时间复杂度为 <span class="arithmatex"><span class="MathJax_Preview">O(nm)</span><script type="math/tex">O(nm)</script></span>，当数据范围稍大时就会超时，那么我们如何优化呢？通过KMP算法可以大大优化时间复杂度，在介绍KMP算法之前，我们需要先了解 <strong>前缀函数</strong> 的知识。</p>
+<h4 id="_23">什么是前缀函数<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<p>给定一个长度为 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，其 <strong>前缀函数</strong> 被定义为一个长度为 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的数组 <span class="arithmatex"><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>。其中 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 的定义是：</p>
+<ol>
+<li>如果子串 <span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots i]</span><script type="math/tex">s[0 \cdots i]</script></span> 有一对相等的真前缀与真后缀：<span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots k-1]</span><script type="math/tex">s[0 \cdots k-1]</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">s[i-(k-1) \cdots i]</span><script type="math/tex">s[i-(k-1) \cdots i]</script></span>，那么 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 就是这个相等的真前缀（或真后缀）的长度，也就是 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]=k</span><script type="math/tex">\pi[i]=k</script></span>；</li>
+<li>如果不止有一对相等的，那么 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 就是其中最长的那一对的长度；</li>
+<li>如果没有相等的，那么 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]=0</span><script type="math/tex">\pi[i]=0</script></span>。</li>
+</ol>
+<p>简单来说 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 就是，子串 <span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots i]</span><script type="math/tex">s[0 \cdots i]</script></span> 最长相等的真前缀与真后缀的长度。</p>
+<p>用数学语言描述如下：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\pi[i]=\max_{k=0 \cdots i}\{k:s[0 \cdots k-1]=s[i-(k-1) \cdots i]\}</div>
+<script type="math/tex; mode=display">\pi[i]=\max_{k=0 \cdots i}\{k:s[0 \cdots k-1]=s[i-(k-1) \cdots i]\}</script>
+</div>
+<p>特别的，<span class="arithmatex"><span class="MathJax_Preview">\pi[0]=0</span><script type="math/tex">\pi[0]=0</script></span>。</p>
+<p>举例来说，对于字符串 <code>cococola</code>，</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[0]=0</span><script type="math/tex">\pi[0]=0</script></span>，因为 <code>c</code> 没有真前缀和真后缀，根据规定为0</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[1]=0</span><script type="math/tex">\pi[1]=0</script></span>，因为 <code>co</code> 没有相等的真前缀和真后缀</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[2]=1</span><script type="math/tex">\pi[2]=1</script></span>，因为 <code>coc</code> 相等的真前缀和真后缀只有 <code>c</code>，长度为1</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[3]=2</span><script type="math/tex">\pi[3]=2</script></span>，因为 <code>coco</code> 相等的真前缀和真后缀只有 <code>co</code>，长度为2</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[4]=3</span><script type="math/tex">\pi[4]=3</script></span>，因为 <code>cococ</code> 相等的真前缀和真后缀有 <code>c</code> 和 <code>coc</code>，最长的长度为3</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[5]=4</span><script type="math/tex">\pi[5]=4</script></span>，因为 <code>cococo</code> 相等的真前缀和真后缀有 <code>co</code> 和 <code>coco</code>，最长的长度为4</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[6]=0</span><script type="math/tex">\pi[6]=0</script></span>，因为 <code>cococol</code> 没有相等的真前缀和真后缀</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\pi[7]=0</span><script type="math/tex">\pi[7]=0</script></span>，因为 <code>cococola</code> 没有相等的真前缀和真后缀</p>
+<p>即字符串 <code>cococola</code> 的前缀函数为 <span class="arithmatex"><span class="MathJax_Preview">[0,0,1,2,3,4,0,0]</span><script type="math/tex">[0,0,1,2,3,4,0,0]</script></span>。</p>
+<p>同理可以计算字符串:</p>
+<p><code>abcabcd</code> 的前缀函数为 <span class="arithmatex"><span class="MathJax_Preview">[0,0,0,1,2,3,0]</span><script type="math/tex">[0,0,0,1,2,3,0]</script></span>。</p>
+<p><code>aabaaab</code> 的前缀函数为 <span class="arithmatex"><span class="MathJax_Preview">[0,1,0,1,2,2,3]</span><script type="math/tex">[0,1,0,1,2,2,3]</script></span>。</p>
+<h4 id="_24">计算前缀函数的朴素算法<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<p>一个直接按照定义计算前缀函数的算法：</p>
+<ul>
+<li>
+<p>在一个循环中以 <span class="arithmatex"><span class="MathJax_Preview">i=1\to n-1</span><script type="math/tex">i=1\to n-1</script></span> 的顺序计算前缀函数 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 的值。</p>
+</li>
+<li>
+<p>令变量 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 从最大的真前缀长度 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始尝试。</p>
+</li>
+<li>
+<p>如果当前长度下真前缀和真后缀相等，则此时长度为 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span>，否则令 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 自减1，继续匹配，直到 <span class="arithmatex"><span class="MathJax_Preview">j=0</span><script type="math/tex">j=0</script></span>。</p>
+</li>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">j=0</span><script type="math/tex">j=0</script></span> 并且没有任何一次匹配，则令 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]=0</span><script type="math/tex">\pi[i]=0</script></span> 并移至 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span>。</p>
+</li>
+</ul>
+<p>代码实现如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">--</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">==</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">)){</span><span class="w"></span>
+<span class="w">                </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>该算法的时间复杂度为 <span class="arithmatex"><span class="MathJax_Preview">O(n^3)</span><script type="math/tex">O(n^3)</script></span>，具有很大的优化空间。</p>
+<h4 id="_25">计算前缀函数的高效算法<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p><strong>第一个优化</strong></p>
+<p>我们观察到相邻的前缀函数值至多增加1。</p>
+<p>因此只需如此考虑：当取一个尽可能大的 <span class="arithmatex"><span class="MathJax_Preview">\pi[i+1]</span><script type="math/tex">\pi[i+1]</script></span> 时，必然要求新增的 <span class="arithmatex"><span class="MathJax_Preview">s[i+1]</span><script type="math/tex">s[i+1]</script></span> 也与之对应的字符匹配，即 <span class="arithmatex"><span class="MathJax_Preview">s[i+1]=s[\pi[i]]</span><script type="math/tex">s[i+1]=s[\pi[i]]</script></span>，此时 <span class="arithmatex"><span class="MathJax_Preview">\pi[i+1]=\pi[i]+1</span><script type="math/tex">\pi[i+1]=\pi[i]+1</script></span>。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\underbrace{\overbrace{s_0 ~ s_1 ~ s_2}^{\pi[i]=3} ~ s_3}_{\pi[i+1]=4} ~ \dots ~ \underbrace{\overbrace{s_{i-2} ~ s_{i-1} ~ s_i}^{\pi[i]=3} ~ s_{i+1}}_{\pi[i+1]=4}</div>
+<script type="math/tex; mode=display">\underbrace{\overbrace{s_0 ~ s_1 ~ s_2}^{\pi[i]=3} ~ s_3}_{\pi[i+1]=4} ~ \dots ~ \underbrace{\overbrace{s_{i-2} ~ s_{i-1} ~ s_i}^{\pi[i]=3} ~ s_{i+1}}_{\pi[i+1]=4}</script>
+</div>
+<p>所以当移动到下一个下标时，前缀函数值要么增加1，要么不变，要么减少。</p>
+<p>代码实现如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">--</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">==</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">)){</span><span class="w"></span>
+<span class="w">                </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>在经过第一次优化的算法中，计算每个 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 时，最优情况是第一次字符串比较就完成了匹配，也就是基础的字符串比较次数是 <code>n-1</code> 次。</p>
+<p>而由于存在 <code>j=pi[i-1]+1 (pi[0]=0)</code> 对于最大字符串比较次数的限制，可以看出每次只有在最优情况才会为字符串比较次数的上限累积 <code>1</code>，而每次超过一次的字符串比较消耗的是之后次数的增长空间。</p>
+<p>由此我们可以得出字符串比较次数最多的一种情况：至少 <code>1</code> 次字符串比较次数的消耗和最多 <span class="arithmatex"><span class="MathJax_Preview">n-2</span><script type="math/tex">n-2</script></span> 次比较次数的积累，此时字符串比较次数为 <code>n-1 + n-2 = 2n-3</code>。</p>
+<p>可见经过第一次优化，计算前缀函数只需要进行 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span> 次字符串比较，总复杂度降为了 <span class="arithmatex"><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span>。</p>
+<p><strong>第二个优化</strong></p>
+<p>在第一个优化中，我们讨论了计算 <span class="arithmatex"><span class="MathJax_Preview">\pi[i+1]</span><script type="math/tex">\pi[i+1]</script></span> 时的最优情况：<span class="arithmatex"><span class="MathJax_Preview">s[i+1]=s[\pi[i]]</span><script type="math/tex">s[i+1]=s[\pi[i]]</script></span>，此时 <span class="arithmatex"><span class="MathJax_Preview">\pi[i+1]=\pi[i]+1</span><script type="math/tex">\pi[i+1]=\pi[i]+1</script></span>。现在我们更进一步，讨论当 <span class="arithmatex"><span class="MathJax_Preview">s[i+1] \neq s[\pi[i]]</span><script type="math/tex">s[i+1] \neq s[\pi[i]]</script></span> 时如何跳转。</p>
+<p>失配时，我们希望找到对于子串 <span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots i]</span><script type="math/tex">s[0 \cdots i]</script></span>，仅次于 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 的第二长度 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，使得在位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 的前缀性质任得以保持，即 <span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots j-1]=s[i-j+1 \cdots i]</span><script type="math/tex">s[0 \cdots j-1]=s[i-j+1 \cdots i]</script></span>。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\overbrace{\underbrace{s_0 ~ s_1}_j ~ s_2 ~ s_3}^{\pi[i]} ~ \dots ~ \overbrace{s_{i-3} ~ s_{i-2} ~ \underbrace{s_{i-1} ~ s_{i}}_j}^{\pi[i]} ~ s_{i+1}</div>
+<script type="math/tex; mode=display">\overbrace{\underbrace{s_0 ~ s_1}_j ~ s_2 ~ s_3}^{\pi[i]} ~ \dots ~ \overbrace{s_{i-3} ~ s_{i-2} ~ \underbrace{s_{i-1} ~ s_{i}}_j}^{\pi[i]} ~ s_{i+1}</script>
+</div>
+<p>如果我们找到了这样的长度 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，那么仅需要再次比较 <span class="arithmatex"><span class="MathJax_Preview">s[i+1]</span><script type="math/tex">s[i+1]</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">s[j]</span><script type="math/tex">s[j]</script></span>。如果它们相等，那么就有 <span class="arithmatex"><span class="MathJax_Preview">\pi[i+1]=j+1</span><script type="math/tex">\pi[i+1]=j+1</script></span>。否则，我们需要找到子串 <span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots i]</span><script type="math/tex">s[0 \cdots i]</script></span> 仅次于 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 的第二长度 <span class="arithmatex"><span class="MathJax_Preview">j^{(2)}</span><script type="math/tex">j^{(2)}</script></span>，使得前缀性质得以保持，如此反复直到 <span class="arithmatex"><span class="MathJax_Preview">j=0</span><script type="math/tex">j=0</script></span>。如果 <span class="arithmatex"><span class="MathJax_Preview">s[i+1] \neq s[0]</span><script type="math/tex">s[i+1] \neq s[0]</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">\pi[i+1]=0</span><script type="math/tex">\pi[i+1]=0</script></span>。</p>
+<p>因为 <span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots \pi[i]-1]=s[i-\pi[i]+1 \cdots i]</span><script type="math/tex">s[0 \cdots \pi[i]-1]=s[i-\pi[i]+1 \cdots i]</script></span>，所以对于 <span class="arithmatex"><span class="MathJax_Preview">s[0 \cdots i]</span><script type="math/tex">s[0 \cdots i]</script></span> 的第二长度 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，有这样的性质：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">s[0 \cdots j-1]=s[i-j+1 \cdots i]=s[\pi[i]-j] \cdots \pi[i]-1</div>
+<script type="math/tex; mode=display">s[0 \cdots j-1]=s[i-j+1 \cdots i]=s[\pi[i]-j] \cdots \pi[i]-1</script>
+</div>
+<p>也就是说 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 等价于子串 <span class="arithmatex"><span class="MathJax_Preview">s[\pi[i]-1]</span><script type="math/tex">s[\pi[i]-1]</script></span> 的前缀函数值，即 <span class="arithmatex"><span class="MathJax_Preview">j=\pi[\pi[i]-1]</span><script type="math/tex">j=\pi[\pi[i]-1]</script></span>。同理，次于 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 的第二长度等价于 <span class="arithmatex"><span class="MathJax_Preview">s[j-1]</span><script type="math/tex">s[j-1]</script></span> 的前缀函数值，<span class="arithmatex"><span class="MathJax_Preview">j^{(2)}=\pi[j-1]</span><script type="math/tex">j^{(2)}=\pi[j-1]</script></span></p>
+<p>显然我们可以得到一个关于 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 的状态转移方程：<span class="arithmatex"><span class="MathJax_Preview">j^{(n)}=\pi[j^{(n-1)}-1]，(j^{(n-1)}&gt;0)</span><script type="math/tex">j^{(n)}=\pi[j^{(n-1)}-1]，(j^{(n-1)}>0)</script></span></p>
+<p>代码实现如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>经过第二次改进的算法不需要进行任何字符串比较，且将时间复杂度优化到了 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span>。</p>
+<h4 id="kmp_3">KMP算法的理论实现<a class="headerlink" href="#kmp_3" title="Permanent link">&para;</a></h4>
+<p>给定一个长度为 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的文本串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 和一个长度为 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 的模式串 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>。</p>
+<p>我们构造一个字符串 <span class="arithmatex"><span class="MathJax_Preview">p+\#+s</span><script type="math/tex">p+\#+s</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">\#</span><script type="math/tex">\#</script></span> 作为一个既不出现在 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 中也不出现在 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 中的分隔符。接下来计算该字符串的前缀函数。现在考虑该前缀函数除去最开始 <span class="arithmatex"><span class="MathJax_Preview">m+1</span><script type="math/tex">m+1</script></span> 个值（即属于字符串 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 和分隔符的函数值）后其余函数值的意义。根据定义，<span class="arithmatex"><span class="MathJax_Preview">\pi[i]</span><script type="math/tex">\pi[i]</script></span> 为右端点在 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 且同时为一个前缀的最长真子串的长度，具体到我们的这种情况下，其值为与 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 的前缀相同且右端点位于 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 的最长子串的长度。由于分隔符的存在，该长度不可能超过 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>。而如果等式 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]=m</span><script type="math/tex">\pi[i]=m</script></span> 成立，则意味着 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 完整出现在该位置（即其右端点位于位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>）。注意该位置的下标是对字符串 <span class="arithmatex"><span class="MathJax_Preview">p+\#+s</span><script type="math/tex">p+\#+s</script></span> 而言的。</p>
+<p>因此如果在某一位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 有 <span class="arithmatex"><span class="MathJax_Preview">\pi[i]=m</span><script type="math/tex">\pi[i]=m</script></span> 成立，则字符串 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 在字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">i-(m-1)-(m+1)=i-2m</span><script type="math/tex">i-(m-1)-(m+1)=i-2m</script></span> 处出现。</p>
+<p>正如在前缀函数的计算中提到的那样，如果我们知道前缀函数的值永远不超过一特定值，那么我们不需要存储整个字符串以及整个前缀函数，而只需要二者开头的一部分。在我们这种情况下意味着只需要存储字符串 <span class="arithmatex"><span class="MathJax_Preview">p+\#</span><script type="math/tex">p+\#</script></span> 以及相应的前缀函数值即可。我们可以一次读入字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的一个字符并计算当前位置的前缀函数值。</p>
+<p>因此KMP算法仅使用 <span class="arithmatex"><span class="MathJax_Preview">O(n+m)</span><script type="math/tex">O(n+m)</script></span> 的时间以及 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span> 的空间就能解决单模式匹配问题。</p>
+<h4 id="kmp_4">KMP算法的代码实现<a class="headerlink" href="#kmp_4" title="Permanent link">&para;</a></h4>
+<p>结构体封装的KMP模板：</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">kmp</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pi</span><span class="p">[</span><span class="mi">100010</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix_function</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pi</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">pi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">j</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">kmp_function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="k">while</span><span class="p">(</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">=</span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="n">j</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="n">j</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// matched</span>
+<span class="w">                </span><span class="n">j</span><span class="o">=</span><span class="n">pi</span><span class="p">[</span><span class="n">j</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+<h3 id="ac">AC自动机<a class="headerlink" href="#ac" title="Permanent link">&para;</a></h3>
+<h4 id="ac_1">什么是AC自动机<a class="headerlink" href="#ac_1" title="Permanent link">&para;</a></h4>
+<p>AC自动机是一种有限状态自动机，它是以Trie的结构为基础，结合KMP的思想建立的。</p>
+<h4 id="ac_2">AC自动机的作用<a class="headerlink" href="#ac_2" title="Permanent link">&para;</a></h4>
+<p>AC自动机能够高效地进行多模式匹配，即在一个文本串中匹配多个模式串。</p>
+<h4 id="ac_3">AC自动机的理论实现<a class="headerlink" href="#ac_3" title="Permanent link">&para;</a></h4>
+<p>AC自动机的运行原理：构建字典图实现自动跳转，构建失配指针实现多模式匹配。</p>
+<p>简单来说，建立一个AC自动机需要两步：</p>
+<ol>
+<li>Trie结构：将所有模式串构建成一颗Trie树</li>
+<li>KMP思想：对Trie树上所有的结点构造失配指针</li>
+</ol>
+<h5 id="trie_5">构建Trie树<a class="headerlink" href="#trie_5" title="Permanent link">&para;</a></h5>
+<p>Trie树的构建和Trie的insert操作一模一样。</p>
+<p>Trie树的结点表示某个模式串的前缀（也称为状态），而Trie树的边就是状态的转移。</p>
+<h5 id="_26">构造失配指针<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h5>
+<p>失配指针即 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针。</p>
+<h6 id="failfail"><span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针的基础思想<a class="headerlink" href="#failfail" title="Permanent link">&para;</a></h6>
+<p>构建 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针，可以类比KMP中构造next指针（即pi[]）的思想。</p>
+<p>利用已经求出 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针的结点推导出当前结点的 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针，一般来说通过BFS实现即可：</p>
+<p>考虑Trie中当前的结点 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>，<span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 的父结点是 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>。</p>
+<p>假设深度小于 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 的所有结点的 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针都已经求得，那么 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针显然已经求得。</p>
+<p>我们跳转到 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针指向的结点 <span class="arithmatex"><span class="MathJax_Preview">fail[p]</span><script type="math/tex">fail[p]</script></span>：</p>
+<ul>
+<li>如果结点 <span class="arithmatex"><span class="MathJax_Preview">fail[p]</span><script type="math/tex">fail[p]</script></span> 的子结点 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 存在，则让 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针指向这个结点 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span>。</li>
+<li>如果结点 <span class="arithmatex"><span class="MathJax_Preview">fail[p]</span><script type="math/tex">fail[p]</script></span> 的子结点 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 不存在，那么我们继续寻找 <span class="arithmatex"><span class="MathJax_Preview">fail[fail[p]]</span><script type="math/tex">fail[fail[p]]</script></span> 指针指向的结点，直到 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针指向根节点。</li>
+</ul>
+<p>如此就完成了 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针的构建。</p>
+<h6 id="failfail-next"><span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针与next指针的比较<a class="headerlink" href="#failfail-next" title="Permanent link">&para;</a></h6>
+<p>共同点：两者都是在 <strong>失配</strong> 时用于跳转从而避免大量回朔的指针。</p>
+<p>不同点：KMP要求 <strong>最长相同真前缀和真后缀</strong>，AC自动机要求 <strong>相同后缀</strong>。</p>
+<ul>
+<li>KMP用于单模式匹配，AC自动机用于多模式匹配。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针指向的结点可能对应着前缀不同的模式串。</li>
+<li>AC自动机在匹配文本串时，同一位上可能匹配多个模式串。</li>
+<li>因此 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针会在字典树上的结点来回跳转，next指针则是在线性结构上跳转。</li>
+</ul>
+<h4 id="ac_4">AC自动机的代码实现<a class="headerlink" href="#ac_4" title="Permanent link">&para;</a></h4>
+<p>主要框架：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">1e6</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="mi">256</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">trie</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">M</span><span class="p">];</span><span class="w"> </span><span class="c1">// Trie树</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">cntword</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"> </span><span class="c1">// 标记是否为模式串的结尾</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">fail</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"> </span><span class="c1">// fail指针</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Trie树结点的下标</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">insert</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// 插入模式串</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">build</span><span class="p">();</span><span class="w"> </span><span class="c1">// 构建fail指针</span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">query</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// 匹配函数</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>接下来将依次介绍insert、build和query函数：</p>
+<ol>
+<li>insert - 构建Trie树</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">next</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">trie</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="n">next</span><span class="p">]){</span><span class="w"></span>
+<span class="w">            </span><span class="n">trie</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="n">next</span><span class="p">]</span><span class="o">=++</span><span class="n">cnt</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">root</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">root</span><span class="p">][</span><span class="n">next</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">cntword</span><span class="p">[</span><span class="n">root</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>与Trie树的insert一模一样，不详细介绍。</p>
+<ol>
+<li>build - 构建 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">build</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">M</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]){</span><span class="w"></span>
+<span class="w">            </span><span class="n">fail</span><span class="p">[</span><span class="n">trie</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">now</span><span class="o">=</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">M</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]){</span><span class="w"></span>
+<span class="w">                </span><span class="n">fail</span><span class="p">[</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">                </span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">fail</span><span class="p">[</span><span class="n">now</span><span class="p">]][</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>首先声明队列 <span class="arithmatex"><span class="MathJax_Preview">q</span><script type="math/tex">q</script></span> 用于BFS，这里的字典树根节点为0，我们将根节点的子节点一一入队。</li>
+<li>然后开始进行BFS，每次取出队首结点 <span class="arithmatex"><span class="MathJax_Preview">now</span><script type="math/tex">now</script></span>，求 <span class="arithmatex"><span class="MathJax_Preview">now</span><script type="math/tex">now</script></span> 的子节点的 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针。</li>
+<li>接着遍历字符集：</li>
+<li>如果字符 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 对应的子结点存在，我们就将该子结点的 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针赋值为 <span class="arithmatex"><span class="MathJax_Preview">fail[now]</span><script type="math/tex">fail[now]</script></span> 的字符 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 对应的结点。</li>
+<li>否则将 <span class="arithmatex"><span class="MathJax_Preview">fail[now]</span><script type="math/tex">fail[now]</script></span> 的字符 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 对应的子结点编号赋值给 <span class="arithmatex"><span class="MathJax_Preview">now</span><script type="math/tex">now</script></span>。</li>
+</ul>
+<p>代码中存在两处与之前的理论分析不一致之处：</p>
+<ul>
+<li>首先，按照分析，应该使用while循环，让 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针不停跳转，判断是否存在对应结点，但此处并非如此。</li>
+<li>其次，此处直接将 <span class="arithmatex"><span class="MathJax_Preview">fail[now]</span><script type="math/tex">fail[now]</script></span> 的子结点赋值为 <span class="arithmatex"><span class="MathJax_Preview">now</span><script type="math/tex">now</script></span> 的子结点。</li>
+</ul>
+<p>这两处地方结合在一起完成了路径压缩，能在 <span class="arithmatex"><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span> 的时间内对单个结点进行 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针的构造。</p>
+<ol>
+<li>query - 匹配函数</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">now</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">now</span><span class="o">=</span><span class="n">trie</span><span class="p">[</span><span class="n">now</span><span class="p">][(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">now</span><span class="p">;</span><span class="n">j</span><span class="o">&amp;&amp;</span><span class="n">cntword</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">!=</span><span class="mi">-1</span><span class="p">;</span><span class="n">j</span><span class="o">=</span><span class="n">fail</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span><span class="w"></span>
+<span class="w">            </span><span class="n">ans</span><span class="o">+=</span><span class="n">cntword</span><span class="p">[</span><span class="n">j</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="n">cntword</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>声明 <span class="arithmatex"><span class="MathJax_Preview">now</span><script type="math/tex">now</script></span> 作为Trie上当前匹配到的结点，<span class="arithmatex"><span class="MathJax_Preview">ans</span><script type="math/tex">ans</script></span> 即返回的答案</li>
+<li>循环遍历文本串，<span class="arithmatex"><span class="MathJax_Preview">now</span><script type="math/tex">now</script></span> 在Trie上跟踪当前字符。</li>
+<li>利用 <span class="arithmatex"><span class="MathJax_Preview">fail</span><script type="math/tex">fail</script></span> 指针找出所有匹配的模式串，累加到答案中。</li>
+</ul>
+<p>这里的 <span class="arithmatex"><span class="MathJax_Preview">now</span><script type="math/tex">now</script></span> 并一直在往Trie后跳转，而是在图上穿梭跳转。</p>
+<hr />
+<h2 id="_27">总结与拓展<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<p>至此，我们已经学习了三种常用的自动机，但是这三种算法和“自动机”似乎毫无关联，所以接下来，我们需要重新认识自动机。</p>
+<h3 id="_28">自动机的形式化定义<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p>一个确定有限状态自动机（DFA）是由以下五个部分：</p>
+<ol>
+<li>字符集 <span class="arithmatex"><span class="MathJax_Preview">\sum</span><script type="math/tex">\sum</script></span>，该自动机只能输入这些字符。</li>
+<li>状态集合 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span>。如果把一个DFA看成一张有向图，那么DFA中的状态就相当于图上的顶点。</li>
+<li>起始状态 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，<span class="arithmatex"><span class="MathJax_Preview">s\in Q</span><script type="math/tex">s\in Q</script></span>，是一个特殊的状态。</li>
+<li>接受状态 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>，<span class="arithmatex"><span class="MathJax_Preview">F\subseteq Q</span><script type="math/tex">F\subseteq Q</script></span>，是一组特殊的状态。</li>
+<li>转移函数 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 是一个接受两个参数并返回一个值的函数，其中，第一个参数和返回值都是一个状态，第二个参数是字符集中的一个字符。如果把一个DFA看成一张有向图，那么DFA中的转移函数就相当于顶点间的边，而每条边上都有一个字符。</li>
+</ol>
+<p>组成的五元组 <span class="arithmatex"><span class="MathJax_Preview">(Q,\sum,\delta,s,F)</span><script type="math/tex">(Q,\sum,\delta,s,F)</script></span></p>
+<p>DFA的作用就是识别字符串，一个自动机 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，若它能识别（接受）字符串 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>，那么 <span class="arithmatex"><span class="MathJax_Preview">A(S)=True</span><script type="math/tex">A(S)=True</script></span>，否则 <span class="arithmatex"><span class="MathJax_Preview">A(S)=False</span><script type="math/tex">A(S)=False</script></span>。</p>
+<p>当一个DFA读入一个字符串时，从初始状态起按照转移函数一个一个字符地转移。如果读入完一个字符串的所有字符后位于一个接受状态，那么我们称这个DFA <strong>接受</strong> 这个字符串，反之我们称这个DFA <strong>不接受</strong> 这个字符串。</p>
+<p>如果一个状态 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> 没有字符 <span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span> 的转移，那么我们令 <span class="arithmatex"><span class="MathJax_Preview">\delta(v,c)=null</span><script type="math/tex">\delta(v,c)=null</script></span>，而 <span class="arithmatex"><span class="MathJax_Preview">null</span><script type="math/tex">null</script></span> 只能转移到 <span class="arithmatex"><span class="MathJax_Preview">null</span><script type="math/tex">null</script></span>，且 <span class="arithmatex"><span class="MathJax_Preview">null</span><script type="math/tex">null</script></span> 不属于接受状态集合。无法转移到任何一个接受状态的状态都可以视作 <span class="arithmatex"><span class="MathJax_Preview">null</span><script type="math/tex">null</script></span>，或者说，<span class="arithmatex"><span class="MathJax_Preview">null</span><script type="math/tex">null</script></span> 代指所有无法转移到任何一个接受状态的状态。</p>
+<p>我们拓展定义转移函数 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span>，令其第二个参数可以接收一个字符串：<span class="arithmatex"><span class="MathJax_Preview">\delta(v,S)=\delta(\delta(v,S[1],S[2\cdots|S|]))</span><script type="math/tex">\delta(v,S)=\delta(\delta(v,S[1],S[2\cdots|S|]))</script></span>，拓展后的转移函数就可以表示从一个状态起接收一个字符串后转移到的状态。那么，<span class="arithmatex"><span class="MathJax_Preview">A(S)=[\delta(s,S)\in F]</span><script type="math/tex">A(S)=[\delta(s,S)\in F]</script></span>。</p>
+<p>此时，我们可以回过头来看看之前学习的三种常用自动机。</p>
+<h4 id="trie_6">Trie<a class="headerlink" href="#trie_6" title="Permanent link">&para;</a></h4>
+<p>对于Trie：</p>
+<ul>
+<li>接受且仅接受指定的字符串集合中的元素。</li>
+<li>接受状态为每个字符串插入到Trie树时到达的状态。</li>
+<li>转移函数为Trie上的边。</li>
+</ul>
+<h4 id="kmp_5">KMP算法<a class="headerlink" href="#kmp_5" title="Permanent link">&para;</a></h4>
+<p>KMP算法可以视作自动机，基于字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的KMP自动机：</p>
+<ul>
+<li>接受且仅接受以 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 为后缀的字符串。</li>
+<li>接受状态为 <span class="arithmatex"><span class="MathJax_Preview">|s|</span><script type="math/tex">|s|</script></span>。</li>
+<li>转移函数为：</li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">\delta(i,c)=\begin{cases}i+1&amp;s[i+1]=c\\ 0&amp;s[1]\ne c\land i=0\\ \delta(\pi(i),c)&amp;s[i+1]\ne c\land i&gt;0 \end{cases}</div>
+<script type="math/tex; mode=display">\delta(i,c)=\begin{cases}i+1&s[i+1]=c\\ 0&s[1]\ne c\land i=0\\ \delta(\pi(i),c)&s[i+1]\ne c\land i>0 \end{cases}</script>
+</div>
+<h4 id="ac_5">AC自动机<a class="headerlink" href="#ac_5" title="Permanent link">&para;</a></h4>
+<p>对于AC自动机：</p>
+<ul>
+<li>接受且仅接受以指定的字符串集合中的某个元素为后缀的字符串，也就是Trie+KMP。</li>
+</ul>
+<h3 id="1">拓展1：常用自动机的深入<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="trie_7">Trie<a class="headerlink" href="#trie_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>检索字符串 <span class="arithmatex"><span class="MathJax_Preview">\surd</span><script type="math/tex">\surd</script></span></li>
+<li>AC自动机 <span class="arithmatex"><span class="MathJax_Preview">\surd</span><script type="math/tex">\surd</script></span></li>
+<li>维护异或极值</li>
+<li>维护异或和</li>
+<li>01-trie合并</li>
+<li>插入&amp;删除</li>
+<li>全局加一</li>
+<li>可持久化字典树</li>
+</ul>
+<h4 id="kmp_6">KMP算法<a class="headerlink" href="#kmp_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>在字符串中查找子串 <span class="arithmatex"><span class="MathJax_Preview">\surd</span><script type="math/tex">\surd</script></span></li>
+<li>AC自动机 <span class="arithmatex"><span class="MathJax_Preview">\surd</span><script type="math/tex">\surd</script></span></li>
+<li>统计每个前缀的出现次数</li>
+<li>一个字符串中本质不同的子串数量</li>
+<li>字符串压缩</li>
+</ul>
+<h3 id="2">拓展2：其他自动机<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Trie(字典树) <span class="arithmatex"><span class="MathJax_Preview">\surd</span><script type="math/tex">\surd</script></span></li>
+<li>KMP算法 <span class="arithmatex"><span class="MathJax_Preview">\surd</span><script type="math/tex">\surd</script></span></li>
+<li>AC自动机 <span class="arithmatex"><span class="MathJax_Preview">\surd</span><script type="math/tex">\surd</script></span></li>
+<li>后缀自动机(SAM)</li>
+<li>接受且仅接受指定字符串的后缀</li>
+<li>广义后缀自动机(广义SAM)</li>
+<li>接受且仅接受指定的字符串集合中的某个元素的后缀，即Trie+SAM</li>
+<li>回文自动机(PAM)</li>
+<li>接受且仅接受某个字符串的所有回文子串的中心及右半部分</li>
+<li>序列自动机</li>
+<li>接受且仅接受指定字符串的子序列</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\cdots</span><script type="math/tex">\cdots</script></span></li>
+</ul>
+<h2 id="_29">全文结束，谢谢阅读<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-07-15 04:57:20</span>
+      
+    
+  </small>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 简介" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              简介
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E6%9C%80%E5%A4%A7%E6%B5%81%E5%85%A5%E9%97%A8/" class="md-footer__link md-footer__link--next" aria-label="下一页: 最大流入门" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              最大流入门
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Buggg的小屋
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/1216105249" target="_blank" rel="noopener" title="Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="mailto:<1216105249@qq.com>" target="_blank" rel="noopener" title="邮箱" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m511.6 36.86-64 415.1a32.008 32.008 0 0 1-31.65 27.147c-4.188 0-8.319-.815-12.29-2.472l-122.6-51.1-50.86 76.29C226.3 508.5 219.8 512 212.8 512c-11.5 0-20.8-9.3-20.8-20.8v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96 122.3 360.3 19.69 317.5C8.438 312.8.812 302.2.062 289.1s5.47-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
