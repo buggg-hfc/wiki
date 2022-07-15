@@ -4,32 +4,45 @@ nav:
   - 主页: 
     - 简介: index.md
   - 概率论与数理统计:
-    - 简介: probability/index.md
-    - 样本空间 随机事件: probability/chapter_1.md
-    - 事件的相互关系及运算: probability/chapter_2.md
-    - 频率: probability/chapter_3.md
-    - 概率: probability/chapter_4.md
-    - 等可能概型(古典概型): probability/chapter_5.md
-    - 条件概率: probability/chapter_6.md
+    - 简介: 概率论与数理统计/index.md
+    - 样本空间 随机事件: 概率论与数理统计/chapter_1.md
+    - 事件的相互关系及运算: 概率论与数理统计/chapter_2.md
+    - 频率: 概率论与数理统计/chapter_3.md
+    - 概率: 概率论与数理统计/chapter_4.md
+    - 等可能概型(古典概型): 概率论与数理统计/chapter_5.md
+    - 条件概率: 概率论与数理统计/chapter_6.md
     - 全概率公式与贝叶斯公式:
-      - 划分: probability/chapter_7_1.md
-      - 全概率公式: probability/chapter_7_2.md
-      - 贝叶斯公式: probability/chapter_7_3.md
-    - 事件独立性: probability/chapter_8.md
-    - 随机变量: probability/chapter_9.md
-    - 离散型随机变量: probability/chapter_10.md
-    - 分布函数: probability/chapter_11.md
-    - 连续型随机变量及其概率密度: probability/chapter_12.md
-    - 均匀分布与指数分布: probability/chapter_13.md
-    - 正态分布: probability/chapter_14.md
-    - 随机变量函数的分布: probability/chapter_15.md
+      - 划分: 概率论与数理统计/chapter_7_1.md
+      - 全概率公式: 概率论与数理统计/chapter_7_2.md
+      - 贝叶斯公式: 概率论与数理统计/chapter_7_3.md
+    - 事件独立性: 概率论与数理统计/chapter_8.md
+    - 随机变量: 概率论与数理统计/chapter_9.md
+    - 离散型随机变量: 概率论与数理统计/chapter_10.md
+    - 分布函数: 概率论与数理统计/chapter_11.md
+    - 连续型随机变量及其概率密度: 概率论与数理统计/chapter_12.md
+    - 均匀分布与指数分布: 概率论与数理统计/chapter_13.md
+    - 正态分布: 概率论与数理统计/chapter_14.md
+    - 随机变量函数的分布: 概率论与数理统计/chapter_15.md
   - 算法专题报告:
-    - 简介: algorithm/index.md
-    - 自动机入门: algorithm/自动机入门.md
-    - 最大流入门: algorithm/最大流入门.md
-  - 高中数学:
-    - 简介: math/index.md
-    - 三角函数: math/三角函数.md
+    - 简介: 算法/index.md
+    - 自动机入门: 算法/自动机入门.md
+    - 最大流入门: 算法/最大流入门.md
+  - 中学知识:
+    - 简介: 中学/index.md
+    - 初中:
+      - 物理: 中学/初中/物理.md
+    - 高中:
+      - 数学:
+        - 三角函数: 中学/高中/数学/三角函数.md
+      - 政治:
+        - 经济常识: 中学/高中/政治/经济常识/经济常识.md
+        - 哲学常识: 中学/高中/政治/哲学常识/哲学常识.md
+        - 政治常识: 中学/高中/政治/政治常识/政治常识.md
+      - 地理:
+        - 自然地理: 中学/高中/地理/自然地理/自然地理.md
+        - 人文地理: 中学/高中/地理/人文地理/人文地理.md
+        - 拓展部分: 中学/高中/地理/拓展部分/拓展部分.md
+        - 专题: 中学/高中/地理/专题/专题.md
 
 repo_url: https://github.com/1216105249/wiki
 
@@ -97,7 +110,7 @@ extra:
       link: mailto:<1216105249@qq.com>
       name: 邮箱
 
-copyright: Copyright &copy; 2020 - 2021 Buggg的小屋
+copyright: Copyright &copy; 2022 Buggg的小屋
 
 edit_uri: ""
 
