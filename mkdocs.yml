@@ -4,25 +4,25 @@ nav:
   - 主页: 
     - 简介: index.md
   - 概率论与数理统计:
-    - 简介: 概率论与数理统计/index.md
-    - 样本空间 随机事件: 概率论与数理统计/chapter_1.md
-    - 事件的相互关系及运算: 概率论与数理统计/chapter_2.md
-    - 频率: 概率论与数理统计/chapter_3.md
-    - 概率: 概率论与数理统计/chapter_4.md
-    - 等可能概型(古典概型): 概率论与数理统计/chapter_5.md
-    - 条件概率: 概率论与数理统计/chapter_6.md
+    - 简介: 概统/index.md
+    - 样本空间 随机事件: 概统/chapter_1.md
+    - 事件的相互关系及运算: 概统/chapter_2.md
+    - 频率: 概统/chapter_3.md
+    - 概率: 概统/chapter_4.md
+    - 等可能概型(古典概型): 概统/chapter_5.md
+    - 条件概率: 概统/chapter_6.md
     - 全概率公式与贝叶斯公式:
-      - 划分: 概率论与数理统计/chapter_7_1.md
-      - 全概率公式: 概率论与数理统计/chapter_7_2.md
-      - 贝叶斯公式: 概率论与数理统计/chapter_7_3.md
-    - 事件独立性: 概率论与数理统计/chapter_8.md
-    - 随机变量: 概率论与数理统计/chapter_9.md
-    - 离散型随机变量: 概率论与数理统计/chapter_10.md
-    - 分布函数: 概率论与数理统计/chapter_11.md
-    - 连续型随机变量及其概率密度: 概率论与数理统计/chapter_12.md
-    - 均匀分布与指数分布: 概率论与数理统计/chapter_13.md
-    - 正态分布: 概率论与数理统计/chapter_14.md
-    - 随机变量函数的分布: 概率论与数理统计/chapter_15.md
+      - 划分: 概统/chapter_7_1.md
+      - 全概率公式: 概统/chapter_7_2.md
+      - 贝叶斯公式: 概统/chapter_7_3.md
+    - 事件独立性: 概统/chapter_8.md
+    - 随机变量: 概统/chapter_9.md
+    - 离散型随机变量: 概统/chapter_10.md
+    - 分布函数: 概统/chapter_11.md
+    - 连续型随机变量及其概率密度: 概统/chapter_12.md
+    - 均匀分布与指数分布: 概统/chapter_13.md
+    - 正态分布: 概统/chapter_14.md
+    - 随机变量函数的分布: 概统/chapter_15.md
   - 算法专题报告:
     - 简介: 算法/index.md
     - 自动机入门: 算法/自动机入门.md
