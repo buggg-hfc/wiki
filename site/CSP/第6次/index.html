@@ -13,7 +13,7 @@
     
     
       
-        <title>201509第5次 - Buggg的小屋</title>
+        <title>第6次 - Buggg的小屋</title>
       
     
     
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              201509第5次
+              第6次
             
           </span>
         </div>
@@ -245,15 +245,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link">
         CSP认证题解
       </a>
     </li>
@@ -769,14 +767,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -895,21 +891,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC5%E6%AC%A1/" class="md-nav__link">
         201509第5次
       </a>
-      
     </li>
   
 
@@ -1297,161 +1283,152 @@
 <p><a href="">暂无</a></p>
 </details>
 <hr />
-<h1 id="1">第1题 数列分段<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
-<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T32">数列分段</a></p>
+<h1 id="1">第1题 数位之和<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T37">数位之和</a></p>
 <p>TAG: <code>基础语法</code></p>
 <p>思路:</p>
-<p><code>遍历整个数组，若相邻两个数不同则答案数加1</code></p>
+<p><code>从个位开始将每一位依次累加进答案即可</code></p>
 <p>代码:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="c1">// vector为可变长数组，使用普通数组也可以</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 初始长度为1</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"> </span><span class="c1">// 遍历数组</span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]){</span><span class="w"> </span><span class="c1">// 遇到需要分段的情况</span>
-<span class="w">            </span><span class="n">ans</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// 数列段长度加1</span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="p">){</span><span class="w"> </span><span class="c1">// 当n不为0则进行循环</span>
+<span class="w">        </span><span class="n">ans</span><span class="o">+=</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// 将末位数字累加进答案</span>
+<span class="w">        </span><span class="n">n</span><span class="o">/=</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// 去除末位数字</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<h1 id="2">第2题 日期计算<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
-<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T31">日期计算</a></p>
-<p>TAG: <code>基础语法</code> <code>模拟</code></p>
+<h1 id="2">第2题 消除类游戏<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T36">消除类游戏</a></p>
+<p>TAG: <code>模拟</code></p>
 <p>思路:</p>
-<p><code>记录到每个月结束位置过去了多少天，然后找到最后一个小于题目给定天数的月份再加一个月就是答案的月份，答案的天数就是总天数-到找到的月份结束为止过去的天数</code></p>
+<p><code>遍历每一位，判断是否被消除即可，需要注意的是，被消除的不能之间消掉，要打上标记最后输出的时候消除，否则可能会影响后面的元素</code></p>
 <p>代码:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// 判断是否为闰年</span>
-<span class="kt">bool</span><span class="w"> </span><span class="nf">is_leap_year</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="o">%</span><span class="mi">400</span><span class="o">==</span><span class="mi">0</span><span class="o">||</span><span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="mi">4</span><span class="o">==</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">y</span><span class="o">%</span><span class="mi">100</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">40</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"> </span><span class="c1">// a用于存储原数组，b用于存储最终是否被消除</span>
+
+<span class="c1">// 如果横或竖连续3个元素相同则被消除</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="mi">-1</span><span class="p">]</span><span class="o">==</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">==</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="c1">// 横着</span>
+<span class="w">        </span><span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="mi">-1</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="mi">-1</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">==</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">==</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="p">])</span><span class="w"> </span><span class="c1">// 竖着</span>
+<span class="w">        </span><span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="mi">-1</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">y</span><span class="o">&gt;&gt;</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 记录各月的天数</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 如果是闰年，二月天数加1</span>
-<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">is_leap_year</span><span class="p">(</span><span class="n">y</span><span class="p">)){</span><span class="w"></span>
-<span class="w">        </span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// s[i]表示到第i个月结束为止，一共过了多少天</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">12</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="o">+</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// id记录答案的月份</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">12</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="o">&lt;=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span><span class="w"> </span><span class="c1">// 找到答案的月份</span>
-<span class="w">            </span><span class="n">id</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="c1">// 读入数组</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">check</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="c1">// 依次判断每个元素是否能够被消除</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;0 &quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 如果被消除则输出0</span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 否则输出原始值</span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 记得换行</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// 天数为实际过去的天数-已经经过的天数</span>
-<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">id</span><span class="o">&lt;&lt;</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">&lt;&lt;</span><span class="n">d</span><span class="o">-</span><span class="n">s</span><span class="p">[</span><span class="n">id</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<h1 id="3">第3题 模板生成系统<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
-<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T30">模板生成系统</a></p>
-<p>TAG: <code>大模拟</code> <code>字符串</code></p>
+<h1 id="3">第3题 画图<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
+<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T35">画图</a></p>
+<p>TAG: <code>大模拟</code> <code>搜索</code> <code>DFS</code></p>
 <p>思路:</p>
-<p><code>经典第三题大模拟题，这题相对于近几年的大模拟题友善了很多，题面也比较简短。但是题目中由于格式问题，输入数据看起来有些奇怪，理论上的输入数据如下：</code></p>
-<div class="highlight"><pre><span></span><code><span class="mi">11</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="o">&lt;!</span><span class="n">DOCTYPE</span><span class="w"> </span><span class="n">html</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">User</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">David</span><span class="w"> </span><span class="n">Beckham</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Email</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s">&quot;mailto:{{ email }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Address</span><span class="o">:</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span><span class="w"></span>
-<span class="n">name</span><span class="w"> </span><span class="s">&quot;David Beckham&quot;</span><span class="w"></span>
-<span class="n">email</span><span class="w"> </span><span class="s">&quot;david@beckham.com&quot;</span><span class="w"></span>
-</code></pre></div>
-<p><code>只需要根据题意进行模拟即可，熟练使用string自带的一些函数例如substr(), find(), size()等可以简化代码。</code></p>
+<p><code>本题最大的坑点在于横纵坐标是反过来的。其他的按要求模拟即可。填充操作可用DFS或者BFS实现，这里采用DFS（太菜了，之前用BFS写炸了），感兴趣可以试着用BFS写一写。</code></p>
 <p>代码:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">110</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"> </span><span class="c1">// 使用字符串数组存数据，比二维字符数组来得简单一些</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="p">{</span><span class="w"> </span><span class="c1">// 使用结构体存模板的对应关系，使用map&lt;string,string&gt;也可以</span>
-<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="n">temp</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">q</span><span class="p">;</span><span class="w"></span>
+<span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">];</span><span class="w"> </span><span class="c1">// 存图</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">dx</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">-1</span><span class="p">};</span><span class="w"> </span><span class="c1">// 方向数组</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">dy</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">-1</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span><span class="w"></span>
 
+<span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="n">ch</span><span class="p">;</span><span class="w"> </span><span class="c1">// 填充这一点</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"> </span><span class="c1">// 遍历四个方向</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nx</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">ny</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// 下面的判断依次是：是否越界，是否已经填充过，是否碰到边界</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">nx</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">||</span><span class="n">nx</span><span class="o">&gt;=</span><span class="n">n</span><span class="o">||</span><span class="n">ny</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">||</span><span class="n">ny</span><span class="o">&gt;=</span><span class="n">m</span><span class="o">||</span><span class="n">a</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span><span class="o">==</span><span class="n">ch</span><span class="o">||</span><span class="n">a</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;|&#39;</span><span class="o">||</span><span class="n">a</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;-&#39;</span><span class="o">||</span><span class="n">a</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;+&#39;</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">dfs</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">ch</span><span class="p">);</span><span class="w"> </span><span class="c1">// 没有的话继续搜索</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// 本题需要注意的点是横纵坐标是反过来的</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">getchar</span><span class="p">();</span><span class="w"> </span><span class="c1">// 后面的数据由于存在空格，需要使用getline读入数据，前面用的cin读入，会忽略空格和换行，因此这里需要使用getchar()读入上一行cin读入时忽略的换行符</span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"> </span><span class="c1">// getline()的一种用法，使用cin.getline()也可以</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s1</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">getchar</span><span class="p">();</span><span class="w"> </span><span class="c1">// 理由同上，读入cin忽略的空格</span>
-<span class="w">        </span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s2</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s2</span><span class="o">=</span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s2</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="kt">int</span><span class="p">)</span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">s2</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 去除模板首尾的&quot;&quot;</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">while</span><span class="p">((</span><span class="n">pos</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;{{ &quot;</span><span class="p">,</span><span class="n">pos</span><span class="p">))</span><span class="o">!=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">){</span><span class="w"> </span><span class="c1">// 循环寻找可替换的模板开始下标</span>
-<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">endpos</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">find</span><span class="p">(</span><span class="s">&quot; }}&quot;</span><span class="p">,</span><span class="n">pos</span><span class="p">);</span><span class="w"> </span><span class="c1">// 寻找模板结束下标</span>
-<span class="w">            </span><span class="n">string</span><span class="w"> </span><span class="n">tt</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">substr</span><span class="p">(</span><span class="n">pos</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="n">endpos</span><span class="o">-</span><span class="p">(</span><span class="n">pos</span><span class="o">+</span><span class="mi">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 获取模板名</span>
-<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">ok</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// 标记</span>
-<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"> </span><span class="c1">// 遍历每一个已知的模板，使用map的话可以不需要循环</span>
-<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">tt</span><span class="o">==</span><span class="n">temp</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">s1</span><span class="p">){</span><span class="w"> </span><span class="c1">// 如果和当前模板匹配上</span>
-<span class="w">                    </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pos</span><span class="p">)</span><span class="o">+</span><span class="n">temp</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">s2</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">substr</span><span class="p">(</span><span class="n">endpos</span><span class="o">+</span><span class="mi">3</span><span class="p">,(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="p">(</span><span class="n">endpos</span><span class="o">+</span><span class="mi">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// 替换</span>
-<span class="w">                    </span><span class="n">ok</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// 打上标记</span>
-<span class="w">                    </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// 匹配上了所以直接退出循环即可</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="sc">&#39;.&#39;</span><span class="p">,</span><span class="k">sizeof</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 将a数组中的元素全部初始化为&#39;.&#39;</span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">q</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="o">--</span><span class="p">){</span><span class="w"> </span><span class="c1">// 读入q次操作</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">op</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">op</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">op</span><span class="p">){</span><span class="w"> </span><span class="c1">// 填充操作</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="o">&gt;&gt;</span><span class="n">y</span><span class="o">&gt;&gt;</span><span class="n">ch</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">dfs</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">ch</span><span class="p">);</span><span class="w"> </span><span class="c1">// 使用dfs进行填充</span>
+<span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w"> </span><span class="c1">// 画线操作</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x1</span><span class="o">&gt;&gt;</span><span class="n">y1</span><span class="o">&gt;&gt;</span><span class="n">x2</span><span class="o">&gt;&gt;</span><span class="n">y2</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">x1</span><span class="o">==</span><span class="n">x2</span><span class="p">){</span><span class="w"> </span><span class="c1">// 竖线</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">y1</span><span class="o">&gt;</span><span class="n">y2</span><span class="p">)</span><span class="n">swap</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 确保下一行的for循环是从小到大遍历</span>
+<span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">y1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">y2</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x1</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;+&#39;</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x1</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;-&#39;</span><span class="p">)</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x1</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;+&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">else</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x1</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;|&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w"> </span><span class="c1">// 横线</span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">x1</span><span class="o">&gt;</span><span class="n">x2</span><span class="p">)</span><span class="n">swap</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">x1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">x2</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">y1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;+&#39;</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">y1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;|&#39;</span><span class="p">)</span><span class="n">a</span><span class="p">[</span><span class="n">y1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;+&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">else</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">y1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;-&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="w">                </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ok</span><span class="p">){</span><span class="w"> </span><span class="c1">// 没有一个能匹配的话</span>
-<span class="w">                </span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pos</span><span class="p">)</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">substr</span><span class="p">(</span><span class="n">endpos</span><span class="o">+</span><span class="mi">3</span><span class="p">,(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="p">(</span><span class="n">endpos</span><span class="o">+</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
-<span class="w">                </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="c1">// 直接continue，不需要将pos++，避免&quot;{{ 模板1 }}{{ 模板2 }}&quot;这种情况。但官网的数据没有这种情况，不写也能过，很离谱</span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="n">pos</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// 将寻找的下标加一</span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<h1 id="4">第4题 高速公路<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
-<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T29">高速公路</a></p>
+<h1 id="4">第4题 送货<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T34">送货</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
 <div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
 </code></pre></div>
-<h1 id="5">第5题 最佳文章<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
-<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T28">最佳文章</a></p>
+<h1 id="5">第5题 矩阵<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T33">矩阵</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
-</code></pre></div>
+<p><code>???+ 视频题解
+暂无</code></p>
 
   <hr>
 <div class="md-source-file">
@@ -1473,42 +1450,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="页脚" >
-      
-        
-        <a href="../%E7%AC%AC4%E6%AC%A1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 201503第4次" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              201503第4次
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../%E4%B8%AD%E5%AD%A6/" class="md-footer__link md-footer__link--next" aria-label="下一页: 简介" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              简介
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
