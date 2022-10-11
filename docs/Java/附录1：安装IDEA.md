@@ -11,7 +11,7 @@
 
 下面的页面可以全选，其他页面一律默认即可。安装完需要重启电脑。
 
-![安装](/resource/附录1：安装IDEA/2安装.png)
+![安装](./resource/附录1：安装IDEA/2安装.png)
 
 - - - - - -
 
@@ -37,16 +37,16 @@
 - JDK：1.8 （Amazon Corretto version 1.8.0_332）会自动安装，无需下载
 - Add sample code：勾选上
 
-![新建项目](/resource/附录1：安装IDEA/4新建项目.png)
+![新建项目](./resource/附录1：安装IDEA/4新建项目.png)
 
 ## 5. 切换成中文界面
 
-![切换中文](/resource/附录1：安装IDEA/5_1切换中文.png)
+![切换中文](./resource/附录1：安装IDEA/5_1切换中文.png)
 
-![安装中文插件](/resource/附录1：安装IDEA/5_2安装中文插件.png)
+![安装中文插件](./resource/附录1：安装IDEA/5_2安装中文插件.png)
 
 - - - - - -
 
 ## 6. 切成白色界面
 
-![切成白色界面](/resource/附录1：安装IDEA/6切成白色界面.png)
+![切成白色界面](./resource/附录1：安装IDEA/6切成白色界面.png)
