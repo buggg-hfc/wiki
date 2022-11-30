@@ -15,3 +15,12 @@
 - [x] [D: Yet Another Yet Another Task](https://codeforces.com/contest/1359/problem/D) `2000` `DP` `最大子段和` `思维`
 - [ ] [E: Modular Stability](https://codeforces.com/contest/1359/problem/E)
 - [ ] [F: RC Kaboom Show](https://codeforces.com/contest/1359/problem/F)
+
+## Educational Codeforces Round 138
+
+- [x] [A: Cowardly Rooks](https://codeforces.com/contest/1749/problem/A) `800` `贪心`
+- [x] [B: Death's Blessing](https://codeforces.com/contest/1749/problem/B) `900` `贪心`
+- [x] [C: Number Game](https://codeforces.com/contest/1749/problem/C) `1400` `贪心` `模拟` `二分`
+- [x] [D: Counting Arrays](https://codeforces.com/contest/1749/problem/D) `1900` `组合数学`
+- [ ] [A: Cowardly Rooks](https://codeforces.com/contest/1749/problem/E)
+- [ ] [A: Cowardly Rooks](https://codeforces.com/contest/1749/problem/F)
