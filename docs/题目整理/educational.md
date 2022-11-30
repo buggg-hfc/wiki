@@ -16,6 +16,15 @@
 - [ ] [E: Modular Stability](https://codeforces.com/contest/1359/problem/E)
 - [ ] [F: RC Kaboom Show](https://codeforces.com/contest/1359/problem/F)
 
+## Educational Codeforces Round 132
+
+- [x] [A: Three Doors](https://codeforces.com/contest/1709/problem/A) `800` `模拟`
+- [ ] [B: Also Try Minecraft](https://codeforces.com/contest/1709/problem/B)
+- [ ] [C: Recover an RBS](https://codeforces.com/contest/1709/problem/C)
+- [ ] [D: Rorororobot](https://codeforces.com/contest/1709/problem/D)
+- [ ] [E: XOR Tree](https://codeforces.com/contest/1709/problem/E)
+- [ ] [F: Multiset of Strings](https://codeforces.com/contest/1709/problem/F)
+
 ## Educational Codeforces Round 134
 
 - [x] [A: Image](https://codeforces.com/contest/1721/problem/A) `800` `模拟`
