@@ -99,8 +99,7 @@ markdown_extensions:
   - toc: # 锚点
       permalink: true
   - admonition # 提示块
-  - codehilite:
-      linenums: true
+  - codehilite(linenums=true)
   - footnotes # 脚注
   - meta # 元数据
   - def_list
