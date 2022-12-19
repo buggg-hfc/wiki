@@ -29,6 +29,9 @@ nav:
       - 6 函数: Java/6函数.md
       - 7 类与接口: Java/7类与接口.md
       - 8 常用容器: Java/8常用容器.md
+      - 9 异常处理: Java/9异常处理.md
+      - 10 注解与反射: Java/10注解与反射.md
+      - 11 多线程与锁: Java/11多线程与锁.md
       - 附录1：安装IDEA: Java/附录1：安装IDEA.md
   - 算法专题报告:
       - 简介: 算法/index.md
