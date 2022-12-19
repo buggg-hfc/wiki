@@ -96,7 +96,8 @@ markdown_extensions:
   - toc: # 锚点
       permalink: true
   - admonition # 提示块
-  - codehilite
+  - codehilite:
+      linenums: true
   - footnotes # 脚注
   - meta # 元数据
   - def_list
@@ -140,4 +141,4 @@ plugins:
   - git-revision-date-localized:
       type: iso_datetime
   - search:
-      lang: "ja"
+      separator: '[\s\u200b\-]'
