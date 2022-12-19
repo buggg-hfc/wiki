@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 安装IDEA
 
 ## 1. 下载

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Educational Codeforces Round 1
 
 - [x] [A: Tricky Sum](https://codeforces.com/contest/598/problem/A) `900` `数学`
