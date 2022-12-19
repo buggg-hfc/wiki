@@ -141,5 +141,5 @@ edit_uri: ""
 plugins:
   - git-revision-date-localized:
       type: iso_datetime
-  - search
-      lang: "jp"
+  - search:
+      lang: "ja"
