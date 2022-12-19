@@ -827,7 +827,7 @@
       
         <li class="md-nav__item">
   <a href="#1-ascii" class="md-nav__link">
-    1. 字符与整数的联系——ASCII码
+    1. 字符与整数的联系——ASCII 码
   </a>
   
 </li>
@@ -1659,7 +1659,7 @@
       
         <li class="md-nav__item">
   <a href="#1-ascii" class="md-nav__link">
-    1. 字符与整数的联系——ASCII码
+    1. 字符与整数的联系——ASCII 码
   </a>
   
 </li>
@@ -1705,9 +1705,19 @@
 <p>字符串是计算机与人类沟通的重要手段。</p>
 <p>——闫学灿</p>
 </blockquote>
-<h2 id="1-ascii">1. 字符与整数的联系——ASCII码<a class="headerlink" href="#1-ascii" title="Permanent link">&para;</a></h2>
+<h2 id="1-ascii">1. 字符与整数的联系——ASCII 码<a class="headerlink" href="#1-ascii" title="Permanent link">&para;</a></h2>
 <p>每个常用字符都对应一个<code>-128 ~ 127</code>的数字，二者之间可以相互转化。注意：目前负数没有与之对应的字符。</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1718,10 +1728,22 @@
 <span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>常用ASCII值：<code>'A'- 'Z'</code>是<code>65 ~ 90</code>，<code>'a' - 'z'</code>是<code>97 - 122</code>，<code>0 - 9</code>是<code>48 - 57</code>。</p>
+</code></pre></div></td></tr></table></div>
+<p>常用 ASCII 值：<code>'A'- 'Z'</code>是<code>65 ~ 90</code>，<code>'a' - 'z'</code>是<code>97 - 122</code>，<code>0 - 9</code>是<code>48 - 57</code>。</p>
 <p>字符可以参与运算，运算时会将其当做整数：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1734,11 +1756,18 @@
 <span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="2-string">2. <code>String</code>类<a class="headerlink" href="#2-string" title="Permanent link">&para;</a></h2>
 <p>初始化：</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">String</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;My name is &quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">String</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// 存储到了相同地址</span><span class="w"></span>
 <span class="n">String</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;yxc&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// String可以通过加号拼接</span><span class="w"></span>
@@ -1746,24 +1775,28 @@
 <span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;My age is %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span><span class="w">  </span><span class="c1">// 格式化字符串，类似于C++中的sprintf</span><span class="w"></span>
 <span class="n">String</span><span class="w"> </span><span class="n">money_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;123.45&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="kt">double</span><span class="w"> </span><span class="n">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">money_str</span><span class="p">);</span><span class="w">  </span><span class="c1">// String转double</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>只读变量，不能修改，例如：</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello &quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello &quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">a</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 会构造一个新的字符串</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>访问<code>String</code>中的字符：</p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">));</span><span class="w">  </span><span class="c1">// 只能读取，不能写入</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>常用API：</p>
+</code></pre></div></td></tr></table></div>
+<p>常用 API：</p>
 <ul>
 <li><code>length()</code>：返回长度</li>
 <li><code>split(String regex)</code>：分割字符串</li>
 <li><code>indexOf(char c)</code>、<code>indexOf(String str)</code>、<code>lastIndexOf(char c)</code>、<code>lastIndexOf(String str)</code>：查找，找不到返回-1</li>
 <li><code>equals()</code>：判断两个字符串是否相等，注意不能直接用<code>==</code></li>
-<li><code>compareTo()</code>：判断两个字符串的字典序大小，负数表示小于，0表示相等，正数表示大于</li>
+<li><code>compareTo()</code>：判断两个字符串的字典序大小，负数表示小于，0 表示相等，正数表示大于</li>
 <li><code>startsWith()</code>：判断是否以某个前缀开头</li>
 <li><code>endsWith()</code>：判断是否以某个后缀结尾</li>
 <li><code>trim()</code>：去掉首尾的空白字符</li>
@@ -1776,7 +1809,18 @@
 </ul>
 <hr />
 <h2 id="3">3. 输入与输出<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1788,12 +1832,20 @@
 <span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">str2</span><span class="p">);</span><span class="w">  </span><span class="c1">// 也可以格式化输出，用 %s 表示字符串</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="4-stringbuilderstringbuffer">4. <code>StringBuilder</code>、<code>StringBuffer</code><a class="headerlink" href="#4-stringbuilderstringbuffer" title="Permanent link">&para;</a></h2>
 <p><code>String</code>不能被修改，如果打算修改字符串，可以使用<code>StringBuilder</code>和<code>StringBuffer</code>。</p>
 <p><code>StringBuffer</code>线程安全，速度较慢；<code>StringBuilder</code>线程不安全，速度较快。</p>
-<div class="highlight"><pre><span></span><code><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 初始化</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 初始化</span><span class="w"></span>
 <span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// 拼接字符串</span><span class="w"></span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">);</span><span class="w"></span>
 
@@ -1802,8 +1854,8 @@
 <span class="p">}</span><span class="w"></span>
 
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<p>常用API：</p>
+</code></pre></div></td></tr></table></div>
+<p>常用 API：</p>
 <ul>
 <li><code>reverse()</code>：翻转字符串</li>
 </ul>
@@ -1813,7 +1865,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-10-11 04:45:16</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 08:52:13</span>
       
     
   </small>

@@ -1185,35 +1185,35 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    第1题 如此编码
+    第 1 题 如此编码
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    第2题 何以包邮？
+    第 2 题 何以包邮？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    第3题 防疫大数据
+    第 3 题 防疫大数据
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    第4题 吉祥物投票
+    第 4 题 吉祥物投票
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    第5题 高维亚空间超频物质变压缩技术
+    第 5 题 高维亚空间超频物质变压缩技术
   </a>
   
 </li>
@@ -1660,35 +1660,35 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    第1题 如此编码
+    第 1 题 如此编码
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    第2题 何以包邮？
+    第 2 题 何以包邮？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    第3题 防疫大数据
+    第 3 题 防疫大数据
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    第4题 吉祥物投票
+    第 4 题 吉祥物投票
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    第5题 高维亚空间超频物质变压缩技术
+    第 5 题 高维亚空间超频物质变压缩技术
   </a>
   
 </li>
@@ -1710,17 +1710,41 @@
 
   <h1>202209第27次</h1>
 
-<details class="视频题解" open="open"><summary>视频题解</summary><p><a href="">暂无</a></p>
-</details>
+<details class="视频题解" open="open"><summary>视频题解</summary></details>
+<p><a href="">暂无</a></p>
 <hr />
-<h2 id="1">第1题 如此编码<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1">第 1 题 如此编码<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T153">如此编码</a></p>
 <p>TAG: <code>贪心</code></p>
 <p>思路:</p>
 <p><code>由题目描述易知数组c是数组a的前缀积数组，而m是对每个c[i]分别乘上一个系数的和，题目要求每个c[i]前面的系数。</code></p>
 <p><code>由于a[i]&gt;0，则可知其前缀积数组是非单调递减的，那么我们不妨贪心地来考虑：从后向前c[i]是单调递增的，那么我们优先选择靠后的c[i]的系数，使其尽可能大。因为前缀积的某些性质保证了这样做是一定有解的（在题目保证有解的前提下，具体证明略）。</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1745,9 +1769,9 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="2">第2题 何以包邮？<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h2 id="2">第 2 题 何以包邮？<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T152">何以包邮？</a></p>
 <p>TAG: <code>DP</code> <code>01背包</code></p>
 <p>思路:</p>
@@ -1755,7 +1779,29 @@
 <p><code>在这题中，x是背包能装的重量，书的重量和价值均为a[i]，跑一遍01背包，然后从头遍历一遍，找到第一个重量大于x的价值，即为答案</code></p>
 <p><code>下面代码中关于01背包求解的部分看不懂的话可以去oi-wiki这个网站上学一学：https://oi-wiki.org/dp/knapsack/#0-1-%E8%83%8C%E5%8C%85</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1778,15 +1824,76 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="3">第3题 防疫大数据<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3">第 3 题 防疫大数据<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T151">防疫大数据</a></p>
 <p>TAG: <code>大模拟</code> <code>STL</code></p>
 <p>思路:</p>
 <p><code>不算太复杂的大模拟吧，把要存的信息和题目中各个条件搞清楚就行了，具体见注释</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="p">{</span><span class="w"> </span><span class="c1">// 用于表示用户</span>
@@ -1848,31 +1955,31 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="4">第4题 吉祥物投票<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="4">第 4 题 吉祥物投票<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T150">吉祥物投票</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
-</code></pre></div>
-<h2 id="5">第5题 高维亚空间超频物质变压缩技术<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="5">第 5 题 高维亚空间超频物质变压缩技术<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T149">高维亚空间超频物质变压缩技术</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-07 08:06:16</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 08:52:13</span>
       
     
   </small>
