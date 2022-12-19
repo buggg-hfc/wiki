@@ -69,5 +69,5 @@
 - [x] [B: Death's Blessing](https://codeforces.com/contest/1749/problem/B) `900` `贪心`
 - [x] [C: Number Game](https://codeforces.com/contest/1749/problem/C) `1400` `贪心` `模拟` `二分`
 - [x] [D: Counting Arrays](https://codeforces.com/contest/1749/problem/D) `1900` `组合数学`
-- [ ] [A: Cowardly Rooks](https://codeforces.com/contest/1749/problem/E)
-- [ ] [A: Cowardly Rooks](https://codeforces.com/contest/1749/problem/F)
+- [ ] [E: Cactus Wall](https://codeforces.com/contest/1749/problem/E)
+- [ ] [F: Distance to the Path](https://codeforces.com/contest/1749/problem/F)
