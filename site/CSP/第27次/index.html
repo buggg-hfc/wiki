@@ -1710,7 +1710,7 @@
 
   <h1>202209第27次</h1>
 
-<details class="note"><summary>视频题解</summary><p><a href="">暂无</a></p>
+<details class="note"><summary>视频题解（暂无）</summary><p><a href="">暂无</a></p>
 </details>
 <hr />
 <h2 id="1">第 1 题 如此编码<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
@@ -1979,7 +1979,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 08:57:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 10:18:04</span>
       
     
   </small>
@@ -1988,6 +1988,51 @@
 
 
 
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script
+  src="https://giscus.app/client.js"
+  data-repo="1216105249/wiki"
+  data-repo-id="R_kgDOHhXjfA"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOHhXjfM4CTJaR"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="1"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async
+></script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+  var giscus = document.querySelector("script[src*=giscus]");
+
+  /* Set palette on initial load */
+  var palette = __md_get("__palette");
+  if (palette && typeof palette.color === "object") {
+    var theme = palette.color.scheme === "slate" ? "dark" : "light";
+    giscus.setAttribute("data-theme", theme);
+  }
+
+  /* Register event handlers after documented loaded */
+  document.addEventListener("DOMContentLoaded", function () {
+    var ref = document.querySelector("[data-md-component=palette]");
+    ref.addEventListener("change", function () {
+      var palette = __md_get("__palette");
+      if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light";
+
+        /* Instruct Giscus to change theme */
+        var frame = document.querySelector(".giscus-frame");
+        frame.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, "https://giscus.app");
+      }
+    });
+  });
+</script>
 
                 
               </article>
