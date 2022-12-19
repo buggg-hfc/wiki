@@ -1129,35 +1129,35 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    第1题 图像旋转
+    第 1 题 图像旋转
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    第2题 数字排序
+    第 2 题 数字排序
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    第3题 节日(暂无)
+    第 3 题 节日(暂无)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    第4题 网络延时(暂无)
+    第 4 题 网络延时(暂无)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    第5题 最小花费(暂无)
+    第 5 题 最小花费(暂无)
   </a>
   
 </li>
@@ -1660,35 +1660,35 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    第1题 图像旋转
+    第 1 题 图像旋转
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    第2题 数字排序
+    第 2 题 数字排序
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    第3题 节日(暂无)
+    第 3 题 节日(暂无)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    第4题 网络延时(暂无)
+    第 4 题 网络延时(暂无)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    第5题 最小花费(暂无)
+    第 5 题 最小花费(暂无)
   </a>
   
 </li>
@@ -1710,16 +1710,40 @@
 
   <h1>201503第4次</h1>
 
-<details class="视频题解" open="open"><summary>视频题解</summary><p><a href="">暂无</a></p>
-</details>
+<details class="视频题解" open="open"><summary>视频题解</summary></details>
+<p><a href="">暂无</a></p>
 <hr />
-<h2 id="1">第1题 图像旋转<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1">第 1 题 图像旋转<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T27">图像旋转</a></p>
 <p>TAG: <code>模拟</code></p>
 <p>思路:</p>
 <p><code>观察可得，旋转后的图像相当于原数组从右往左，从上往下输出的结果，因此直接输出即可。</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">1010</span><span class="p">;</span><span class="w"></span>
@@ -1744,15 +1768,51 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="2">第2题 数字排序<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h2 id="2">第 2 题 数字排序<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T26">数字排序</a></p>
 <p>TAG: <code>STL</code> <code>排序</code></p>
 <p>思路:</p>
 <p><code>使用结构体存数字和出现的次数，然后自定义结构体排序函数，使用STL自带的sort()函数即可快速实现排序操作。</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">1010</span><span class="p">;</span><span class="w"></span>
@@ -1789,40 +1849,40 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="3">第3题 节日(暂无)<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3">第 3 题 节日(暂无)<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T25">节日</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="4">第4题 网络延时(暂无)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="4">第 4 题 网络延时(暂无)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T24">网络延时</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
-</code></pre></div>
-<h2 id="5">第5题 最小花费(暂无)<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="5">第 5 题 最小花费(暂无)<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T23">最小花费</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-09-18 12:25:45</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 08:52:13</span>
       
     
   </small>

@@ -882,15 +882,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-errorexception" class="md-nav__link">
-    1 Error与Exception的区别
+  <a href="#1-error-exception" class="md-nav__link">
+    1 Error 与 Exception 的区别
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2-exception" class="md-nav__link">
-    2 Exception类的继承关系
+    2 Exception 类的继承关系
   </a>
   
 </li>
@@ -1686,15 +1686,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-errorexception" class="md-nav__link">
-    1 Error与Exception的区别
+  <a href="#1-error-exception" class="md-nav__link">
+    1 Error 与 Exception 的区别
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2-exception" class="md-nav__link">
-    2 Exception类的继承关系
+    2 Exception 类的继承关系
   </a>
   
 </li>
@@ -1761,16 +1761,16 @@
 <p>异常处理可以允许我们在程序运行时进行诊断和补救。</p>
 <p>—— 闫学灿</p>
 </blockquote>
-<h2 id="1-errorexception">1 Error与Exception的区别<a class="headerlink" href="#1-errorexception" title="Permanent link">&para;</a></h2>
-<p>Error是程序无法处理的错误，比如OutOfMemoryError、ThreadDeath等。这些异常发生时，Java虚拟机(JVM)一般会选择线程终止。此类异常是程序的致命异常，是无法捕获处理的。</p>
-<p>Exception是程序本身可以处理的异常，这种异常分两大类运行时异常和非运行时异常。 程序中应当尽可能去处理这些异常。</p>
+<h2 id="1-error-exception">1 Error 与 Exception 的区别<a class="headerlink" href="#1-error-exception" title="Permanent link">&para;</a></h2>
+<p>Error 是程序无法处理的错误，比如 OutOfMemoryError、ThreadDeath 等。这些异常发生时，Java 虚拟机(JVM)一般会选择线程终止。此类异常是程序的致命异常，是无法捕获处理的。</p>
+<p>Exception 是程序本身可以处理的异常，这种异常分两大类运行时异常和非运行时异常。 程序中应当尽可能去处理这些异常。</p>
 <hr />
-<h2 id="2-exception">2 Exception类的继承关系<a class="headerlink" href="#2-exception" title="Permanent link">&para;</a></h2>
+<h2 id="2-exception">2 Exception 类的继承关系<a class="headerlink" href="#2-exception" title="Permanent link">&para;</a></h2>
 <p><img alt="exception" src="/resource/9异常处理/exception.png" /></p>
 <hr />
 <h2 id="3">3 运行时异常和非运行时异常的区别<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>运行时异常都是RuntimeException类及其子类异常，如NullPointerException、IndexOutOfBoundsException等， 这些异常是 <strong>非检查型异常</strong>，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。</p>
-<p>非运行时异常是RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如IOException、SQLException等以及用户自定义的Exception异常，这些是**检查型异常**。一般情况下不自定义检查型异常。</p>
+<p>运行时异常都是 RuntimeException 类及其子类异常，如 NullPointerException、IndexOutOfBoundsException 等， 这些异常是 <strong>非检查型异常</strong>，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。</p>
+<p>非运行时异常是 RuntimeException 以外的异常，类型上都属于 Exception 类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如 IOException、SQLException 等以及用户自定义的 Exception 异常，这些是**检查型异常**。一般情况下不自定义检查型异常。</p>
 <hr />
 <h2 id="4">4 内置异常类<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>非检查性异常</p>
@@ -1921,7 +1921,38 @@
 </table>
 <hr />
 <h2 id="6">6 捕获异常<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
@@ -1953,13 +1984,38 @@
 <span class="w">        </span><span class="n">foo</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="7">7 抛出异常<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p><code>throw</code>：在函数内抛出一个异常。</p>
 <p><code>throws</code>：在函数定义时抛出一些可能的异常。</p>
 <p>检查型异常必须被捕获或者抛出。</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span><span class="w"></span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1985,12 +2041,31 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="8-try-with-resources">8 try-with-resources<a class="headerlink" href="#8-try-with-resources" title="Permanent link">&para;</a></h2>
 <p>JDK7 之后，Java 新增的 <code>try-with-resource</code> 语法糖来打开资源，并且可以在语句执行完毕后确保每个资源都被自动关闭 。</p>
 <p><code>try</code> 用于声明和实例化资源，<code>catch</code> 用于处理关闭资源时可能引发的所有异常。</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
@@ -2010,14 +2085,14 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 07:58:51</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 08:52:13</span>
       
     
   </small>

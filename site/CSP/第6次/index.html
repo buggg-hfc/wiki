@@ -1157,35 +1157,35 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    第1题 数位之和
+    第 1 题 数位之和
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    第2题 消除类游戏
+    第 2 题 消除类游戏
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    第3题 画图
+    第 3 题 画图
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    第4题 送货(暂无)
+    第 4 题 送货(暂无)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    第5题 矩阵(暂无)
+    第 5 题 矩阵(暂无)
   </a>
   
 </li>
@@ -1660,35 +1660,35 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    第1题 数位之和
+    第 1 题 数位之和
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    第2题 消除类游戏
+    第 2 题 消除类游戏
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    第3题 画图
+    第 3 题 画图
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    第4题 送货(暂无)
+    第 4 题 送货(暂无)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#5" class="md-nav__link">
-    第5题 矩阵(暂无)
+    第 5 题 矩阵(暂无)
   </a>
   
 </li>
@@ -1710,16 +1710,28 @@
 
   <h1>201512第6次</h1>
 
-<details class="视频题解" open="open"><summary>视频题解</summary><p><a href="">暂无</a></p>
-</details>
+<details class="视频题解" open="open"><summary>视频题解</summary></details>
+<p><a href="">暂无</a></p>
 <hr />
-<h2 id="1">第1题 数位之和<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1">第 1 题 数位之和<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T37">数位之和</a></p>
 <p>TAG: <code>基础语法</code></p>
 <p>思路:</p>
 <p><code>从个位开始将每一位依次累加进答案即可</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
@@ -1732,15 +1744,47 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="2">第2题 消除类游戏<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h2 id="2">第 2 题 消除类游戏<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T36">消除类游戏</a></p>
 <p>TAG: <code>模拟</code></p>
 <p>思路:</p>
 <p><code>遍历每一位，判断是否被消除即可，需要注意的是，被消除的不能之间消掉，要打上标记最后输出的时候消除，否则可能会影响后面的元素</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">40</span><span class="p">;</span><span class="w"></span>
@@ -1773,15 +1817,74 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="3">第3题 画图<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3">第 3 题 画图<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T35">画图</a></p>
 <p>TAG: <code>大模拟</code> <code>搜索</code> <code>DFS</code></p>
 <p>思路:</p>
 <p><code>本题最大的坑点在于横纵坐标是反过来的。其他的按要求模拟即可。填充操作可用DFS或者BFS实现，这里采用DFS（太菜了，之前用BFS写炸了），感兴趣可以试着用BFS写一写。</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">110</span><span class="p">;</span><span class="w"></span>
@@ -1841,31 +1944,31 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="4">第4题 送货(暂无)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="4">第 4 题 送货(暂无)<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T34">送货</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<div class="highlight"><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
-</code></pre></div>
-<h2 id="5">第5题 矩阵(暂无)<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h2 id="5">第 5 题 矩阵(暂无)<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>题目链接: <a href="http://118.190.20.162/view.page?gpid=T33">矩阵</a></p>
 <p>TAG: <code>暂无</code></p>
 <p>思路:</p>
 <p><code>暂无</code></p>
 <p>代码:</p>
-<p><code>???+ 视频题解
-暂无</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">暂无</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-09-18 12:25:45</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 08:52:13</span>
       
     
   </small>
