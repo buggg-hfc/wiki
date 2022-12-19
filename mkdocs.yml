@@ -93,30 +93,31 @@ theme:
 
 markdown_extensions:
   - smarty
-  - toc:
+  - toc: # 锚点
       permalink: true
-  - admonition
-  - codehilite:
-      guess_lang: true
-      linenums: true
-  - footnotes
-  - meta
+  - admonition # 提示块
+  - codehilite: # 代码高亮，显示行号
+      - guess_lang: true
+      - linenums: true
+  - footnotes # 脚注
+  - meta # 元数据
   - def_list
-  - pymdownx.arithmatex
-  - pymdownx.betterem:
+  - pymdownx.arithmatex # 数学公式
+  - pymdownx.betterem: # 加粗和斜体
       smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
+  - pymdownx.caret # 下划线上标
+  - pymdownx.critic # 增加删除修改高亮注释，可修饰行内或段落
   - pymdownx.details
-  - pymdownx.emoji:
+  - pymdownx.emoji: # 表情
       emoji_generator: !!python/name:pymdownx.emoji.to_png
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - pymdownx.tasklist
-  - pymdownx.tilde
+  - pymdownx.inlinehilite # 行内代码高亮
+  - pymdownx.magiclink # 自动识别超链接
+  - pymdownx.mark # 文本高亮
+  - pymdownx.smartsymbols # 符号转换
+  - pymdownx.superfences # 代码嵌套在列表里
+  - pymdownx.tasklist: # 复选框checklist
+      custom_checkbox: true
+  - pymdownx.tilde # 删除线下标
 
 extra_javascript:
   - "js/baidu-tongji.js"
@@ -130,7 +131,7 @@ extra:
       link: https://github.com/1216105249
       name: Github
     - icon: fontawesome/solid/paper-plane
-      link: mailto:<1216105249@qq.com>
+      link: mailto:<bugcat.hfc@qq.com>
       name: 邮箱
 
 copyright: Copyright &copy; 2022 Buggg的小屋
@@ -141,4 +142,6 @@ plugins:
   - git-revision-date-localized:
       type: iso_datetime
   - search
-    lang: ja
+    lang:
+      - ja
+      - en
