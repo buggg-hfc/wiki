@@ -128,7 +128,7 @@ extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
 
 extra:
-  generator: false
+  generator: true
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/1216105249
