@@ -1,7 +1,7 @@
 window.MathJax = {
   tex2jax: {
-    inlineMath: [ ["\\(","\\)"] ],
-    displayMath: [ ["\\[","\\]"] ]
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
   },
   TeX: {
     TagSide: "right",
@@ -11,10 +11,10 @@ window.MathJax = {
       autoNumber: "AMS",
     },
     unicode: {
-      fonts: "STIXGeneral,'Arial Unicode MS'"
-    }
+      fonts: "STIXGeneral,'Arial Unicode MS'",
+    },
   },
   displayAlign: "left",
   showProcessingMessages: false,
-  messageStyle: "none"
+  messageStyle: "none",
 };
