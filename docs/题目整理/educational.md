@@ -2,7 +2,7 @@
 comments: true
 ---
 
-## Educational Codeforces Round 1
+## Educational Round 1
 
 - [x] [A: Tricky Sum](https://codeforces.com/contest/598/problem/A) `900` `数学`
 - [x] [B: Queries on a String](https://codeforces.com/contest/598/problem/B) `1300` `模拟`
@@ -11,7 +11,7 @@ comments: true
 - [ ] [E: Chocolate Bar](https://codeforces.com/contest/598/problem/E)
 - [ ] [F: Cut Length](https://codeforces.com/contest/598/problem/F)
 
-## Educational Codeforces Round 88
+## Educational Round 88
 
 - [x] [A: Berland Poker](https://codeforces.com/contest/1359/problem/A) `1000` `贪心` `数学`
 - [x] [B: New Theatre Square](https://codeforces.com/contest/1359/problem/B) `1000` `贪心`
@@ -20,7 +20,7 @@ comments: true
 - [ ] [E: Modular Stability](https://codeforces.com/contest/1359/problem/E)
 - [ ] [F: RC Kaboom Show](https://codeforces.com/contest/1359/problem/F)
 
-## Educational Codeforces Round 132
+## Educational Round 132
 
 - [x] [A: Three Doors](https://codeforces.com/contest/1709/problem/A) `800` `模拟`
 - [x] [B: Also Try Minecraft](https://codeforces.com/contest/1709/problem/B) `900` `前缀和`
@@ -29,7 +29,7 @@ comments: true
 - [ ] [E: XOR Tree](https://codeforces.com/contest/1709/problem/E)
 - [ ] [F: Multiset of Strings](https://codeforces.com/contest/1709/problem/F)
 
-## Educational Codeforces Round 134
+## Educational Round 134
 
 - [x] [A: Image](https://codeforces.com/contest/1721/problem/A) `800` `模拟`
 - [x] [B: Deadly Laser](https://codeforces.com/contest/1721/problem/B) `1000` `模拟`
@@ -38,7 +38,7 @@ comments: true
 - [x] [E: Prefix Function Queries](https://codeforces.com/contest/1721/problem/E) `2200` `字符串` `前缀函数`
 - [ ] [F: Matching Reduction](https://codeforces.com/contest/1721/problem/F)
 
-## Educational Codeforces Round 135
+## Educational Round 135
 
 - [x] [A: Colored Balls: Revisited](https://codeforces.com/contest/1728/problem/A) `800` `贪心`
 - [x] [B: Best Permutation](https://codeforces.com/contest/1728/problem/B) `800` `贪心` `构造`
@@ -48,7 +48,7 @@ comments: true
 - [ ] [F: Fishermen](https://codeforces.com/contest/1728/problem/F)
 - [ ] [G: Illumination](https://codeforces.com/contest/1728/problem/G)
 
-## Educational Codeforces Round 136
+## Educational Round 136
 
 - [x] [A: Immobile Knight](https://codeforces.com/contest/1739/problem/A) `800` `模拟`
 - [x] [B: Array Recovery](https://codeforces.com/contest/1739/problem/B) `1100` `构造` `贪心`
@@ -57,7 +57,7 @@ comments: true
 - [x] [E: Cleaning Robot](https://codeforces.com/contest/1739/problem/E) `2400` `DP`
 - [ ] [F: Keyboard Design](https://codeforces.com/contest/1739/problem/F)
 
-## Educational Codeforces Round 137
+## Educational Round 137
 
 - [x] [A: Password](https://codeforces.com/contest/1743/problem/A) `800` `数学`
 - [x] [B: Permutation Value](https://codeforces.com/contest/1743/problem/B) `800` `构造` `贪心`
@@ -67,7 +67,7 @@ comments: true
 - [ ] [F: Intersection and Union](https://codeforces.com/contest/1743/problem/F)
 - [ ] [G: Antifibonacci Cut](https://codeforces.com/contest/1743/problem/G)
 
-## Educational Codeforces Round 138
+## Educational Round 138
 
 - [x] [A: Cowardly Rooks](https://codeforces.com/contest/1749/problem/A) `800` `贪心`
 - [x] [B: Death's Blessing](https://codeforces.com/contest/1749/problem/B) `900` `贪心`
@@ -75,3 +75,21 @@ comments: true
 - [x] [D: Counting Arrays](https://codeforces.com/contest/1749/problem/D) `1900` `组合数学`
 - [ ] [E: Cactus Wall](https://codeforces.com/contest/1749/problem/E)
 - [ ] [F: Distance to the Path](https://codeforces.com/contest/1749/problem/F)
+
+## Educational Round 139
+
+- [x] [A: Extremely Round](https://codeforces.com/contest/1766/problem/A) `800` `暴力` `模拟`
+- [x] [B: Notepad#](https://codeforces.com/contest/1766/problem/B) `1000` `模拟`
+- [x] [C: Hamiltonian Wall](https://codeforces.com/contest/1766/problem/C) `1300` `模拟`
+- [x] [D: Lucky Chains](https://codeforces.com/contest/1766/problem/D) `1600` `数论`
+- [ ] [E: Decomposition](https://codeforces.com/contest/1766/problem/E)
+- [ ] [F: MCF](https://codeforces.com/contest/1766/problem/F)
+
+## Educational Round 140
+
+- [x] [A: Cut the Triangle](https://codeforces.com/contest/1767/problem/A) `800` `模拟`
+- [x] [B: Block Towers](https://codeforces.com/contest/1767/problem/B) `800` `贪心` `模拟`
+- [x] [C: Count Binary Strings](https://codeforces.com/contest/1767/problem/C) `2100` `区间DP`
+- [x] [D: Playoff](https://codeforces.com/contest/1767/problem/D) `1500` `构造` `贪心` `模拟`
+- [ ] [E: Algebra Flash](https://codeforces.com/contest/1767/problem/E)
+- [ ] [F: Two Subtrees](https://codeforces.com/contest/1767/problem/F)
