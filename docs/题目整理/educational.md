@@ -24,7 +24,7 @@ comments: true
 
 - [x] [A: Three Doors](https://codeforces.com/contest/1709/problem/A) `800` `模拟`
 - [x] [B: Also Try Minecraft](https://codeforces.com/contest/1709/problem/B) `900` `前缀和`
-- [ ] [C: Recover an RBS](https://codeforces.com/contest/1709/problem/C)
+- [ ] [C: Recover an RBS](https://codeforces.com/contest/1709/problem/C) `1800` `贪心` `构造`
 - [ ] [D: Rorororobot](https://codeforces.com/contest/1709/problem/D)
 - [ ] [E: XOR Tree](https://codeforces.com/contest/1709/problem/E)
 - [ ] [F: Multiset of Strings](https://codeforces.com/contest/1709/problem/F)
