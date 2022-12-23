@@ -29,6 +29,15 @@ comments: true
 - [ ] [E: XOR Tree](https://codeforces.com/contest/1709/problem/E)
 - [ ] [F: Multiset of Strings](https://codeforces.com/contest/1709/problem/F)
 
+## Educational Round 133
+
+- [x] [A: 2-3 Moves](https://codeforces.com/contest/1716/problem/A) `800` `模拟` `贪心`
+- [x] [B: Permutation Chain](https://codeforces.com/contest/1716/problem/B) `900` `构造`
+- [x] [C: Robot in a Hallway](https://codeforces.com/contest/1716/problem/C) `2000` `DP`
+- [x] [D: Chip Move](https://codeforces.com/contest/1716/problem/D) `2000` `DP`
+- [ ] [E: Swap and Maximum Block](https://codeforces.com/contest/1716/problem/E)
+- [ ] [F: Bags with Balls](https://codeforces.com/contest/1716/problem/F)
+
 ## Educational Round 134
 
 - [x] [A: Image](https://codeforces.com/contest/1721/problem/A) `800` `模拟`
