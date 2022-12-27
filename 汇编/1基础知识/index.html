@@ -1952,7 +1952,7 @@
 <li>伪指令：没有对应的机器码，由编译器执行，计算机并不执行。</li>
 <li>其他符号：如 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 等，由编译器识别，没有对应的机器码。</li>
 </ol>
-<p>汇编语言的核心是汇编指令。</p>
+<p>汇编语言的核心是 <strong>汇编指令</strong>。</p>
 <hr />
 <h2 id="14">1.4 存储器<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
 <p>CPU 是计算机的核心部件，它控制整个计算机的运作并进行运算。要想让一个 CPU 工作，就必须向它提供 <strong>指令</strong> 和 <strong>数据</strong>。</p>
@@ -1964,10 +1964,10 @@
 <p>指令和数据是应用上的概念，<strong>在内存或磁盘上，指令和数据没有任何区别，都是二进制信息</strong>。</p>
 <hr />
 <h2 id="16">1.6 存储单元<a class="headerlink" href="#16" title="Permanent link">&para;</a></h2>
-<p>存储器被划分成若干个存储单元，每个存储单元从 0 开始顺序编号。</p>
+<p>存储器被划分成若干个存储单元，<strong>每个存储单元从 0 开始顺序编号</strong>。</p>
 <p>电子计算机的最小信息单位是 bit，也就是一个二进制位。8 个 bit 组成一个 Byte，即一个字节。</p>
 <p>微型机存储器的存储单元可以存储一个 Byte，即 8 个二进制位。</p>
-<p>微机存储器的容量是以字节为最小单元来计算的。</p>
+<p>微机存储器的容量是以 <strong>字节为最小单元</strong> 来计算的。</p>
 <hr />
 <h2 id="17-cpu">1.7 CPU 对存储器的读写<a class="headerlink" href="#17-cpu" title="Permanent link">&para;</a></h2>
 <p>CPU 要从内存中读数据，首先要指定存储单元的地址。也就是说它要先确定要读取哪一个存储单元中的数据。</p>
@@ -1987,27 +1987,42 @@
 </ol>
 <hr />
 <h2 id="18">1.8 地址总线<a class="headerlink" href="#18" title="Permanent link">&para;</a></h2>
+<p>CPU 通过地址总线来指定存储器单元。</p>
+<p>地址总线上能传送多少不同的信息，CPU 就可以对多少个存储单元进行寻址。</p>
+<p>一个 CPU 有 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 跟地址线，则可以说这个 CPU 的地址总线的宽度为 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>。这样的 CPU 最多可以寻找 <span class="arithmatex"><span class="MathJax_Preview">2^N</span><script type="math/tex">2^N</script></span> 个内存单元</p>
 <hr />
 <h2 id="19">1.9 数据总线<a class="headerlink" href="#19" title="Permanent link">&para;</a></h2>
+<p>CPU 与内存或其他器件之间的数据传送是通过数据总线来进行的。数据总线的宽度决定了 CPU 和外界的数据传送速度。</p>
 <hr />
 <h2 id="110">1.10 控制总线<a class="headerlink" href="#110" title="Permanent link">&para;</a></h2>
+<p>CPU 对外部器件的控制是通过控制总线来进行的。</p>
 <hr />
 <h2 id="111">1.11 内存地址空间（概述）<a class="headerlink" href="#111" title="Permanent link">&para;</a></h2>
+<p>举例来讲，一个 CPU 的地址总线宽度为 10，则可以寻址到 1024 个内存单元，这 1024 个可寻到的内存单元就构成这个 CPU 的内存地址空间。</p>
 <hr />
 <h2 id="112">1.12 主板<a class="headerlink" href="#112" title="Permanent link">&para;</a></h2>
+<p>每台 PC 机中都有一个主板，主板上有核心器件和一些主要器件，这些器件通过总线（地址总线、数据总线、控制总线）相连。</p>
 <hr />
 <h2 id="113">1.13 接口卡<a class="headerlink" href="#113" title="Permanent link">&para;</a></h2>
+<p>CPU 对外部设备不能直接控制，CPU 通过总线向接口卡发送命令，接口卡根据 CPU 的命令控制外设进行工作。</p>
 <hr />
 <h2 id="114">1.14 各类存储器芯片<a class="headerlink" href="#114" title="Permanent link">&para;</a></h2>
+<p>从读写属性上看分为两类：</p>
+<ul>
+<li>随机存储器（RAM）：可读可写，但必须带电存储，关机后存储的内容丢失</li>
+<li>只读存储器（ROM）：只读不写，关机后内容不丢失</li>
+</ul>
 <hr />
 <h2 id="115">1.15 内存地址空间<a class="headerlink" href="#115" title="Permanent link">&para;</a></h2>
+<p>最终运行程序的是 CPU，对于 CPU 来讲，系统中的所有存储器中的存储单元都处于一个统一的逻辑存储器中，它的容量受 CPU 寻址能力（地址总线宽度）的限制。</p>
+<p>这个逻辑存储器即是我们所说的内存地址空间。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-27 06:50:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-27 07:05:20</span>
       
     
   </small>
