@@ -2019,21 +2019,21 @@
 <li><span class="arithmatex"><span class="MathJax_Preview">cc</span><script type="math/tex">cc</script></span> 变为 <span class="arithmatex"><span class="MathJax_Preview">\$c\$c\$</span><script type="math/tex">\$c\$c\$</script></span></li>
 </ul>
 <p>结论：已知新字符串的奇数长度的最长回文子串长度为 <span class="arithmatex"><span class="MathJax_Preview">len</span><script type="math/tex">len</script></span>，原字符串最长回文子串长度为 <span class="arithmatex"><span class="MathJax_Preview">\frac{len}{2}</span><script type="math/tex">\frac{len}{2}</script></span></p>
-<details class="note" open="open"><summary>简单证明</summary><p>设原串为 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，长度为 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>，新串为 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>，长度为 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>，新串中奇数长度的最长回文子串长度为 <span class="arithmatex"><span class="MathJax_Preview">len</span><script type="math/tex">len</script></span>
-已知 <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">t[i]=\begin{cases}插入的字符&amp; \text{i为奇数}\\原串中的字符&amp; \text{i为偶数}\end{cases}</span><script type="math/tex">t[i]=\begin{cases}插入的字符& \text{i为奇数}\\原串中的字符& \text{i为偶数}\end{cases}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">t[i]=\begin{cases}插入的字符&amp; \text{i为奇数}\\原串中的字符&amp; \text{i为偶数}\end{cases}</span><script type="math/tex">t[i]=\begin{cases}插入的字符& \text{i为奇数}\\原串中的字符& \text{i为偶数}\end{cases}</script></span></script></span>
-又因为 <span class="arithmatex"><span class="MathJax_Preview">\text{插入的字符}\neq\text{原串中的字符}</span><script type="math/tex">\text{插入的字符}\neq\text{原串中的字符}</script></span>
-所以相邻的字符 <span class="arithmatex"><span class="MathJax_Preview">t[i] \neq t[i+1],\ (1 \leq i \leq m-1)</span><script type="math/tex">t[i] \neq t[i+1],\ (1 \leq i \leq m-1)</script></span>，即不存在偶数长度的回文子串
-因此只需考虑奇数长度的回文子串
-而显然无论奇数长度的回文子串的中心是插入的字符或者是原串中的字符，其左右两端点的字符都是插入的字符
-此时有 <span class="arithmatex"><span class="MathJax_Preview">\frac{len}{2}</span><script type="math/tex">\frac{len}{2}</script></span> 个原串中的字符，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{len}{2}+1</span><script type="math/tex">\frac{len}{2}+1</script></span> 个插入的字符，故原串最长回文子串长度为 <span class="arithmatex"><span class="MathJax_Preview">\frac{len}{2}</span><script type="math/tex">\frac{len}{2}</script></span>
-证明新串最长回文子串恰好是原串最长回文子串加上插入的字符这一过程省略。</p>
+<details class="note" open="open"><summary>简单证明</summary><p>设原串为 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，长度为 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>，新串为 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>，长度为 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>，新串中奇数长度的最长回文子串长度为 <span class="arithmatex"><span class="MathJax_Preview">len</span><script type="math/tex">len</script></span></p>
+<p>已知 <span class="arithmatex"><span class="MathJax_Preview">t[i]=\begin{cases}插入的字符&amp; \text{i为奇数}\\原串中的字符&amp; \text{i为偶数}\end{cases}</span><script type="math/tex">t[i]=\begin{cases}插入的字符& \text{i为奇数}\\原串中的字符& \text{i为偶数}\end{cases}</script></span></p>
+<p>又因为 <span class="arithmatex"><span class="MathJax_Preview">\text{插入的字符}\neq\text{原串中的字符}</span><script type="math/tex">\text{插入的字符}\neq\text{原串中的字符}</script></span></p>
+<p>所以相邻的字符 <span class="arithmatex"><span class="MathJax_Preview">t[i] \neq t[i+1],\ (1 \leq i \leq m-1)</span><script type="math/tex">t[i] \neq t[i+1],\ (1 \leq i \leq m-1)</script></span>，即不存在偶数长度的回文子串</p>
+<p>因此只需考虑奇数长度的回文子串</p>
+<p>而显然无论奇数长度的回文子串的中心是插入的字符或者是原串中的字符，其左右两端点的字符都是插入的字符</p>
+<p>此时有 <span class="arithmatex"><span class="MathJax_Preview">\frac{len}{2}</span><script type="math/tex">\frac{len}{2}</script></span> 个原串中的字符，有 <span class="arithmatex"><span class="MathJax_Preview">\frac{len}{2}+1</span><script type="math/tex">\frac{len}{2}+1</script></span> 个插入的字符，故原串最长回文子串长度为 <span class="arithmatex"><span class="MathJax_Preview">\frac{len}{2}</span><script type="math/tex">\frac{len}{2}</script></span></p>
+<p>证明新串最长回文子串恰好是原串最长回文子串加上插入的字符这一过程省略。</p>
 </details>
 <h4 id="133">1.3.3 算法步骤<a class="headerlink" href="#133" title="Permanent link">&para;</a></h4>
 <p>记通过上述小技巧处理后的新字符串为 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，要求出从任意位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 出发，向两边最远扩展的回文子串长度</p>
 <p>我们把向一边能够扩展的字符数记为从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始的 <strong>最大回文半径</strong>，记作 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span>，需要注意的是 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span> 包括 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 自身</p>
 <p>我们从左向右依次计算 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span></p>
 <p>假设我们已经求出了 <span class="arithmatex"><span class="MathJax_Preview">p[1],p[2],\cdots,p[i-1]</span><script type="math/tex">p[1],p[2],\cdots,p[i-1]</script></span>，那么我们可以维护使得回文半径最大的 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 和以 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 为中心的区间 <span class="arithmatex"><span class="MathJax_Preview">[L,R]</span><script type="math/tex">[L,R]</script></span></p>
-<p>显然 <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\begin{cases}L=M-p[M]+1&amp; (M&lt;i)\\R=M+p[M]-1&amp; (M&lt;i)\end{cases}</span><script type="math/tex">\begin{cases}L=M-p[M]+1& (M<i)\\R=M+p[M]-1& (M<i)\end{cases}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\begin{cases}L=M-p[M]+1&amp; (M&lt;i)\\R=M+p[M]-1&amp; (M&lt;i)\end{cases}</span><script type="math/tex">\begin{cases}L=M-p[M]+1& (M<i)\\R=M+p[M]-1& (M<i)\end{cases}</script></span></script></span></p>
+<p>显然 <span class="arithmatex"><span class="MathJax_Preview">\begin{cases}L=M-p[M]+1&amp; (M&lt;i)\\R=M+p[M]-1&amp; (M&lt;i)\end{cases}</span><script type="math/tex">\begin{cases}L=M-p[M]+1& (M<i)\\R=M+p[M]-1& (M<i)\end{cases}</script></span></p>
 <p>接着进行分类讨论：</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">i \leq R</span><script type="math/tex">i \leq R</script></span>：找到 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 关于 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 的对称点 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>（此时 <span class="arithmatex"><span class="MathJax_Preview">i-M=M-k</span><script type="math/tex">i-M=M-k</script></span>，即 <span class="arithmatex"><span class="MathJax_Preview">k=2M-i</span><script type="math/tex">k=2M-i</script></span>）<ul>
@@ -2069,7 +2069,27 @@
 <p>最后找到所有 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span> 中的最大值 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，易得此时 <span class="arithmatex"><span class="MathJax_Preview">x=\frac{len}{2}+1</span><script type="math/tex">x=\frac{len}{2}+1</script></span>，因此最终答案为 <span class="arithmatex"><span class="MathJax_Preview">x-1</span><script type="math/tex">x-1</script></span></p>
 <p>复杂度分析：暴力扩展的过程中 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 的值也在同步增加，<span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 最多只会增加 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span> 次，因此总时间复杂度为 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></p>
 <h4 id="134">1.3.4 代码模板<a class="headerlink" href="#134" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">manacher</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">manacher</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
@@ -2090,7 +2110,7 @@
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="135">1.3.5 例题<a class="headerlink" href="#135" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
@@ -2098,7 +2118,40 @@
 <p>题目大意：求字符串的最长回文子串的长度</p>
 <p>分析：模板题</p>
 <p>代码：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">manacher</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
@@ -2132,7 +2185,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p><a href="https://codeforces.com/contest/17/problem/E">Palisection</a></p>
@@ -2149,7 +2202,61 @@
 <p>可以通过前缀和与后缀和求出上面两个值</p>
 <p>每一种操作都是 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span>，且互不相关，因此总时间复杂度为 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></p>
 <p>代码：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">using</span><span class="w"> </span><span class="n">ll</span><span class="o">=</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span><span class="w"></span>
@@ -2204,7 +2311,7 @@
 <span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">manacher</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h2 id="2">2. 最小表示法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
@@ -2214,7 +2321,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-29 05:55:10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-29 05:59:51</span>
       
     
   </small>
