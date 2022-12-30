@@ -2173,7 +2173,18 @@
 <p>求出 <span class="arithmatex"><span class="MathJax_Preview">z[i]</span><script type="math/tex">z[i]</script></span> 后更新 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span></p>
 <p>时间复杂度：暴力向后匹配的过程中 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 的值也在同步增加，而 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 最多只会被加 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span> 次，因此总复杂度为 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></p>
 <h3 id="14">1.4 代码模板<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exkmp</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exkmp</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
@@ -2185,7 +2196,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">z</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="15">1.5 例题<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
 <p>待补充</p>
 <hr />
@@ -2569,7 +2580,20 @@
 <p>算法会在 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 之一大于 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的时候终止</p>
 <p>此时仍然保留在字符串范围内的指针指向的位置就是要求的答案</p>
 <h4 id="34">3.4 代码模板<a class="headerlink" href="#34" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="nf">getmin</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">string</span><span class="w"> </span><span class="nf">getmin</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="s">&quot;$&quot;</span><span class="o">+</span><span class="n">s</span><span class="o">+</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
@@ -2583,7 +2607,7 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="35">3.5 例题<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
 <p>待补充</p>
 <hr />
@@ -2594,7 +2618,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-30 11:39:10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-30 11:42:26</span>
       
     
   </small>
