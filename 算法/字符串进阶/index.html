@@ -1132,6 +1132,26 @@
     1.5 例题
   </a>
   
+    <nav class="md-nav" aria-label="1.5 例题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-kmpz" class="md-nav__link">
+    1.5.1 （模板题）扩展 KMP（Z 函数）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-password" class="md-nav__link">
+    1.5.2 Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1227,6 +1247,26 @@
   <a href="#27" class="md-nav__link">
     2.7 例题
   </a>
+  
+    <nav class="md-nav" aria-label="2.7 例题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    2.7.1 回文子串的最大长度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272-palisection" class="md-nav__link">
+    2.7.2 Palisection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1954,6 +1994,26 @@
     1.5 例题
   </a>
   
+    <nav class="md-nav" aria-label="1.5 例题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-kmpz" class="md-nav__link">
+    1.5.1 （模板题）扩展 KMP（Z 函数）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-password" class="md-nav__link">
+    1.5.2 Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2050,6 +2110,26 @@
     2.7 例题
   </a>
   
+    <nav class="md-nav" aria-label="2.7 例题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    2.7.1 回文子串的最大长度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272-palisection" class="md-nav__link">
+    2.7.2 Palisection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2135,13 +2215,15 @@
 <p>暴力做法：枚举所有位 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span>，进行匹配 <span class="arithmatex"><span class="MathJax_Preview">O(m)</span><script type="math/tex">O(m)</script></span>，总时间复杂度 <span class="arithmatex"><span class="MathJax_Preview">O(nm)</span><script type="math/tex">O(nm)</script></span></p>
 <p>优化：二分+哈希 <span class="arithmatex"><span class="MathJax_Preview">O(nlogm+m)</span><script type="math/tex">O(nlogm+m)</script></span></p>
 <p>扩展KMP：能以线性时间复杂度求出一个字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 和它的任意后缀 <span class="arithmatex"><span class="MathJax_Preview">s[i] \cdots s[n]</span><script type="math/tex">s[i] \cdots s[n]</script></span> 的最长公共前缀的长度</p>
+<p>与KMP的区别：KMP是到 <span class="arithmatex"><span class="MathJax_Preview">s[i]</span><script type="math/tex">s[i]</script></span> 结束匹配，扩展KMP是从 <span class="arithmatex"><span class="MathJax_Preview">s[i]</span><script type="math/tex">s[i]</script></span> 开始匹配</p>
 <h3 id="13">1.3 具体分析<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <p>对于 <span class="arithmatex"><span class="MathJax_Preview">i&gt;1</span><script type="math/tex">i>1</script></span> 的位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>，用 <span class="arithmatex"><span class="MathJax_Preview">z[i]</span><script type="math/tex">z[i]</script></span> 表示字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 和后缀 <span class="arithmatex"><span class="MathJax_Preview">s[i] \cdots s[n]</span><script type="math/tex">s[i] \cdots s[n]</script></span> 的最长公共前缀的长度</p>
 <p>定义 <span class="arithmatex"><span class="MathJax_Preview">z[1]=0</span><script type="math/tex">z[1]=0</script></span>，然后从 <span class="arithmatex"><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 枚举 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>，依次计算 <span class="arithmatex"><span class="MathJax_Preview">z[i]</span><script type="math/tex">z[i]</script></span> 的值</p>
 <p>假设正在计算第 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 个位置的值 <span class="arithmatex"><span class="MathJax_Preview">z[i]</span><script type="math/tex">z[i]</script></span>，此时 <span class="arithmatex"><span class="MathJax_Preview">z[1] \cdots z[i-1]</span><script type="math/tex">z[1] \cdots z[i-1]</script></span> 都已经计算好了</p>
-<p>对于 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">s[j] \cdots s[j+z[j]-1] \ = \ s[1] \cdots s[z[j]]</span><script type="math/tex">s[j] \cdots s[j+z[j]-1] \ = \ s[1] \cdots s[z[j]]</script></span></p>
-<p>为了计算 <span class="arithmatex"><span class="MathJax_Preview">z[i]</span><script type="math/tex">z[i]</script></span>，在枚举 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 的过程中，我们需要维护一个 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 最大的区间 <span class="arithmatex"><span class="MathJax_Preview">[L,R]</span><script type="math/tex">[L,R]</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">\begin{cases}L=j&amp; (j&lt;i)\\R=j+z[j]-1&amp; (j&lt;i)\end{cases}</span><script type="math/tex">\begin{cases}L=j& (j<i)\\R=j+z[j]-1& (j<i)\end{cases}</script></span></p>
-<p>初始时 <span class="arithmatex"><span class="MathJax_Preview">L=1,\ R=0</span><script type="math/tex">L=1,\ R=0</script></span></p>
+<p>则对于任意 <span class="arithmatex"><span class="MathJax_Preview">j\ (j&lt;i)</span><script type="math/tex">j\ (j<i)</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">s[j] \cdots s[j+z[j]-1] \ = \ s[1] \cdots s[z[j]]</span><script type="math/tex">s[j] \cdots s[j+z[j]-1] \ = \ s[1] \cdots s[z[j]]</script></span></p>
+<p>为了计算 <span class="arithmatex"><span class="MathJax_Preview">z[i]</span><script type="math/tex">z[i]</script></span>，在枚举 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 的过程中，我们需要维护一个 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 最大的区间 <span class="arithmatex"><span class="MathJax_Preview">[L,R]</span><script type="math/tex">[L,R]</script></span>，其中</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\begin{cases}L=j&amp; (j&lt;i)\\R=j+z[j]-1&amp; (j&lt;i)\end{cases}</span><script type="math/tex">\begin{cases}L=j& (j<i)\\R=j+z[j]-1& (j<i)\end{cases}</script></span></p>
+<p>初始时 <span class="arithmatex"><span class="MathJax_Preview">L=1,\ R=0</span><script type="math/tex">L=1,\ R=0</script></span>，即空区间</p>
 <p>有如下几种情况：</p>
 <ol>
 <li>
@@ -2150,7 +2232,7 @@
 <p>此时 <span class="arithmatex"><span class="MathJax_Preview">s[i] \cdots s[R]\ =\ s[k] \cdots s[R-L+1]</span><script type="math/tex">s[i] \cdots s[R]\ =\ s[k] \cdots s[R-L+1]</script></span></p>
 <ul>
 <li>若 <span class="arithmatex"><span class="MathJax_Preview">z[k]&lt;R-i+1</span><script type="math/tex">z[k]<R-i+1</script></span>，说明从 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 开始匹配不到 <span class="arithmatex"><span class="MathJax_Preview">R-L+1</span><script type="math/tex">R-L+1</script></span> 那么远，也就是说从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始匹配不到 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 那么远，此时 <span class="arithmatex"><span class="MathJax_Preview">z[i]=z[k]</span><script type="math/tex">z[i]=z[k]</script></span></li>
-<li>若 <span class="arithmatex"><span class="MathJax_Preview">z[k] \ge R-i+1</span><script type="math/tex">z[k] \ge R-i+1</script></span>，说明从 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 开始可以匹配到 <span class="arithmatex"><span class="MathJax_Preview">R-L+1</span><script type="math/tex">R-L+1</script></span> 那么远，也就是说从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始可以匹配到 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 那么远，此时从 <span class="arithmatex"><span class="MathJax_Preview">R+1</span><script type="math/tex">R+1</script></span> 开始继续暴力向后匹配即可，即 <span class="arithmatex"><span class="MathJax_Preview">z[i]=R-i+1</span><script type="math/tex">z[i]=R-i+1</script></span> 并继续匹配</li>
+<li>若 <span class="arithmatex"><span class="MathJax_Preview">z[k] \ge R-i+1</span><script type="math/tex">z[k] \ge R-i+1</script></span>，说明从 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 开始可以匹配到 <span class="arithmatex"><span class="MathJax_Preview">R-L+1</span><script type="math/tex">R-L+1</script></span> 那么远，也就是说从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始可以匹配到 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 那么远，此时从 <span class="arithmatex"><span class="MathJax_Preview">R+1</span><script type="math/tex">R+1</script></span> 开始继续暴力向后匹配即可，即令 <span class="arithmatex"><span class="MathJax_Preview">z[i]=R-i+1</span><script type="math/tex">z[i]=R-i+1</script></span> 并继续匹配</li>
 </ul>
 </li>
 <li>
@@ -2172,21 +2254,170 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exkmp</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exkmp</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="o">+</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="n">R</span><span class="p">)</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">R</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="mi">-1</span><span class="o">&gt;</span><span class="n">R</span><span class="p">)</span><span class="n">L</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">z</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <h3 id="15">1.5 例题<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
-<p>待补充</p>
+<h4 id="151-kmpz">1.5.1 <a href="https://www.luogu.com.cn/problem/P5410">（模板题）扩展 KMP（Z 函数）</a><a class="headerlink" href="#151-kmpz" title="Permanent link">&para;</a></h4>
+<p>题目描述：给定字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>，求：<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 数组、从字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 中每一位出发，最多能匹配字符串 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 的字符数</p>
+<p>题目分析：模板题</p>
+<p>参考代码：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">ll</span><span class="o">=</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">2e7</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">ll</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">exkmp</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="o">+</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="n">R</span><span class="p">)</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="mf">1l</span><span class="n">l</span><span class="o">*</span><span class="n">R</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="mi">-1</span><span class="o">&gt;</span><span class="n">R</span><span class="p">)</span><span class="n">L</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="o">&gt;&gt;</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="n">m</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">exkmp</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="s">&quot;#&quot;</span><span class="o">+</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">ans1</span><span class="o">=</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ans2</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">ans1</span><span class="o">^=</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">m</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">ans2</span><span class="o">^=</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">m</span><span class="mi">-1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans1</span><span class="o">&lt;&lt;</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">&lt;&lt;</span><span class="n">ans2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<h4 id="152-password">1.5.2 <a href="https://codeforces.com/contest/126/problem/B">Password</a><a class="headerlink" href="#152-password" title="Permanent link">&para;</a></h4>
+<p>题目描述：给定字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，求出最长的子串 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>，满足 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的前缀、<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的后缀、<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 还以非前后缀的形式出现在 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 中。<span class="arithmatex"><span class="MathJax_Preview">1 \leq |s| \leq {10}^6</span><script type="math/tex">1 \leq |s| \leq {10}^6</script></span></p>
+<p>题目分析：对于某个位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>，若 <span class="arithmatex"><span class="MathJax_Preview">z[i]=n-i+1</span><script type="math/tex">z[i]=n-i+1</script></span>，则从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 到字符串结尾这一段既是前缀也是后缀，只需满足 <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">i-1</span><script type="math/tex">i-1</script></span> 中最大的 <span class="arithmatex"><span class="MathJax_Preview">z[]</span><script type="math/tex">z[]</script></span> 大于等于 <span class="arithmatex"><span class="MathJax_Preview">z[i]</span><script type="math/tex">z[i]</script></span> 即满足 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 还以非前后缀的形式出现在 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 中</p>
+<p>参考代码：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exkmp</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="o">+</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="n">R</span><span class="p">)</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">L</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">R</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="mi">-1</span><span class="o">&gt;</span><span class="n">R</span><span class="p">)</span><span class="n">L</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">R</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">z</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="o">=</span><span class="n">exkmp</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">],</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span><span class="w"></span>
+<span class="w">            </span><span class="n">pos</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="o">+</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Just a legend&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="2-manacher">2. Manacher<a class="headerlink" href="#2-manacher" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 基础知识<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
@@ -2328,12 +2559,10 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <h3 id="27">2.7 例题<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><a href="https://www.acwing.com/problem/content/141/">回文子串的最大长度</a></p>
-<p>题目大意：求字符串的最长回文子串的长度</p>
-<p>分析：模板题</p>
-<p>代码：</p>
+<h4 id="271">2.7.1 <a href="https://www.acwing.com/problem/content/141/">回文子串的最大长度</a><a class="headerlink" href="#271" title="Permanent link">&para;</a></h4>
+<p>题目描述：求字符串的最长回文子串的长度</p>
+<p>题目分析：模板题</p>
+<p>参考代码：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2402,12 +2631,10 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p><a href="https://codeforces.com/contest/17/problem/E">Palisection</a></p>
-<p>题目大意：给定一个由小写字母组成的字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，求出 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 中有多少对有公共部分的回文子串。<span class="arithmatex"><span class="MathJax_Preview">1\leq|s|\leq2*{10}^{6}</span><script type="math/tex">1\leq|s|\leq2*{10}^{6}</script></span></p>
-<p>分析：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\text{有公共部分的回文子串对}=\text{回文字串对}-\text{没有公共部分的回文子串对}</span><script type="math/tex">\text{有公共部分的回文子串对}=\text{回文字串对}-\text{没有公共部分的回文子串对}</script></span></p>
+<h4 id="272-palisection">2.7.2 <a href="https://codeforces.com/contest/17/problem/E">Palisection</a><a class="headerlink" href="#272-palisection" title="Permanent link">&para;</a></h4>
+<p>题目描述：给定一个由小写字母组成的字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，求出 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 中有多少对有公共部分的回文子串。<span class="arithmatex"><span class="MathJax_Preview">1\leq|s|\leq2*{10}^{6}</span><script type="math/tex">1\leq|s|\leq2*{10}^{6}</script></span></p>
+<p>题目分析：</p>
+<p>有公共部分的回文子串对=回文字串对-没有公共部分的回文子串对</p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\text{回文子串对}=\frac{\text{回文子串}*(\text{回文子串-1})}{2}</span><script type="math/tex">\text{回文子串对}=\frac{\text{回文子串}*(\text{回文子串-1})}{2}</script></span></p>
 <p>回文子串可通过 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span> 求出</p>
 <p>没有公共部分的回文子串对与两部分相关：</p>
@@ -2417,7 +2644,7 @@
 </ol>
 <p>可以通过前缀和与后缀和求出上面两个值</p>
 <p>每一种操作都是 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span>，且互不相关，因此总时间复杂度为 <span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></p>
-<p>代码：</p>
+<p>参考代码：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2528,8 +2755,6 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
-</li>
-</ol>
 <hr />
 <h2 id="3">3. 最小表示法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 基础知识<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
@@ -2606,7 +2831,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-30 11:45:57</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-31 06:26:00</span>
       
     
   </small>
