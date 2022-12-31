@@ -2479,8 +2479,9 @@
 <p>记通过上述小技巧处理后的新字符串为 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，要求出从任意位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 出发，向两边最远扩展的回文子串长度</p>
 <p>我们把向一边能够扩展的字符数记为从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始的 <strong>最大回文半径</strong>，记作 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span>，需要注意的是 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span> 包括 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 自身</p>
 <p>我们从左向右依次计算 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span></p>
-<p>假设我们已经求出了 <span class="arithmatex"><span class="MathJax_Preview">p[1],p[2],\cdots,p[i-1]</span><script type="math/tex">p[1],p[2],\cdots,p[i-1]</script></span>，那么我们可以维护使得回文半径最大的 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 和以 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 为中心的区间 <span class="arithmatex"><span class="MathJax_Preview">[L,R]</span><script type="math/tex">[L,R]</script></span></p>
-<p>显然 <span class="arithmatex"><span class="MathJax_Preview">\begin{cases}L=M-p[M]+1&amp; (M&lt;i)\\R=M+p[M]-1&amp; (M&lt;i)\end{cases}</span><script type="math/tex">\begin{cases}L=M-p[M]+1& (M<i)\\R=M+p[M]-1& (M<i)\end{cases}</script></span></p>
+<p>假设我们要计算 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span>，此时已经计算了 <span class="arithmatex"><span class="MathJax_Preview">p[1],p[2],\cdots,p[i-1]</span><script type="math/tex">p[1],p[2],\cdots,p[i-1]</script></span></p>
+<p>为了计算 <span class="arithmatex"><span class="MathJax_Preview">p[i]</span><script type="math/tex">p[i]</script></span>，在枚举 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 的过程中，我们要维护使得 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 最大的区间 <span class="arithmatex"><span class="MathJax_Preview">[L,R]</span><script type="math/tex">[L,R]</script></span></p>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\begin{cases}L=M-p[M]+1&amp; (M&lt;i)\\R=M+p[M]-1&amp; (M&lt;i)\end{cases}</span><script type="math/tex">\begin{cases}L=M-p[M]+1& (M<i)\\R=M+p[M]-1& (M<i)\end{cases}</script></span></p>
 <p>接着进行分类讨论：</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">i \leq R</span><script type="math/tex">i \leq R</script></span>：找到 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 关于 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 的对称点 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>（此时 <span class="arithmatex"><span class="MathJax_Preview">i-M=M-k</span><script type="math/tex">i-M=M-k</script></span>，即 <span class="arithmatex"><span class="MathJax_Preview">k=2M-i</span><script type="math/tex">k=2M-i</script></span>）<ul>
@@ -2831,7 +2832,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-31 06:26:00</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-31 06:41:24</span>
       
     
   </small>
