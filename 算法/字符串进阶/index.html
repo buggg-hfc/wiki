@@ -2772,7 +2772,7 @@
 <h2 id="3">3. 最小表示法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 基础知识<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>对于一个长度为 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的字符串 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，我们把它首位相连形成一个环，然后在任一位置断开，得到的字符串 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> <strong>循环同构</strong></p>
-<p>即若 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 循环同构，则满足 <span class="arithmatex"><span class="MathJax_Preview">t_i=s[i\cdots n]+s[1\cdots i-1],\ (1\leq i\leq n)</span><script type="math/tex">t_i=s[i\cdots n]+s[1\cdots i-1],\ (1\leq i\leq n)</script></span></p>
+<p>即若 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 循环同构，则满足 <span class="arithmatex"><span class="MathJax_Preview">t_i=s[i] \cdots s[n]+s[1] \cdots s[i-1],\ (1 \leq i \leq n)</span><script type="math/tex">t_i=s[i] \cdots s[n]+s[1] \cdots s[i-1],\ (1 \leq i \leq n)</script></span></p>
 <p>在这 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 个与 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 循环同构的字符串中，<strong>字典序最小</strong> 的那个称为 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的 <strong>最小表示</strong></p>
 <h3 id="32">3.2 最小表示的求法<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <p>暴力做法是把这 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 个与 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 循环同构的字符串都求出来，然后选择字典序最小的，显然复杂度为 <span class="arithmatex"><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span></p>
@@ -2783,15 +2783,15 @@
 <p>用两个指针 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，分别指向到目前为止两个可能是答案串的起始位置</p>
 <p>初始 <span class="arithmatex"><span class="MathJax_Preview">i=1,\ j=2</span><script type="math/tex">i=1,\ j=2</script></span>，随着算法进行，两者逐步增大</p>
 <p>假设 <span class="arithmatex"><span class="MathJax_Preview">i&lt;j</span><script type="math/tex">i<j</script></span>，且从 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 开始的 <strong>最大</strong> 的 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 位字符和从 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 开始的 <strong>最大</strong> 的 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 位字符是一样的</p>
-<p>此时 <span class="arithmatex"><span class="MathJax_Preview">s[i\cdots i+k-1]\ =\ s[j\cdots j+k-1],\ (k\leq n)</span><script type="math/tex">s[i\cdots i+k-1]\ =\ s[j\cdots j+k-1],\ (k\leq n)</script></span></p>
+<p>此时 <span class="arithmatex"><span class="MathJax_Preview">s[i] \cdots s[i+k-1] \ = \ s[j] \cdots s[j+k-1], \ (k \leq n)</span><script type="math/tex">s[i] \cdots s[i+k-1] \ = \ s[j] \cdots s[j+k-1], \ (k \leq n)</script></span></p>
 <p>分如下三种情况进行进一步讨论：</p>
 <ol>
 <li>
 <p><span class="arithmatex"><span class="MathJax_Preview">s[i+k]&gt;s[j+k]</span><script type="math/tex">s[i+k]>s[j+k]</script></span></p>
 <p>位置 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 显然不可能是最终答案，<span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 指针需要向后挪</p>
-<p>注意到 <span class="arithmatex"><span class="MathJax_Preview">s[i\cdots i+k-1]</span><script type="math/tex">s[i\cdots i+k-1]</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">s[j\cdots j+k-1]</span><script type="math/tex">s[j\cdots j+k-1]</script></span> 完全相等，且 <span class="arithmatex"><span class="MathJax_Preview">s[i+k]&gt;s[j+k]</span><script type="math/tex">s[i+k]>s[j+k]</script></span></p>
+<p>注意到 <span class="arithmatex"><span class="MathJax_Preview">s[i] \cdots s[i+k-1]</span><script type="math/tex">s[i] \cdots s[i+k-1]</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">s[j] \cdots s[j+k-1]</span><script type="math/tex">s[j] \cdots s[j+k-1]</script></span> 完全相等，且 <span class="arithmatex"><span class="MathJax_Preview">s[i+k]&gt;s[j+k]</span><script type="math/tex">s[i+k]>s[j+k]</script></span></p>
 <p>那么 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">i+k</span><script type="math/tex">i+k</script></span> 都不可能是答案</p>
-<p>所以 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 可以直接挪到 <span class="arithmatex"><span class="MathJax_Preview">i+k-1</span><script type="math/tex">i+k-1</script></span> 的位置，注意此时 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 可能会大于等于 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，两者相等时我们可以随便选择一个指针把它向后挪一位</p>
+<p>所以 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 可以直接挪到 <span class="arithmatex"><span class="MathJax_Preview">i+k+1</span><script type="math/tex">i+k+1</script></span> 的位置，注意此时 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 可能会大于等于 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，两者相等时我们可以随便选择一个指针把它向后挪一位</p>
 </li>
 <li>
 <p><span class="arithmatex"><span class="MathJax_Preview">s[i+k]&lt;s[j+k]</span><script type="math/tex">s[i+k]<s[j+k]</script></span></p>
@@ -2905,7 +2905,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-31 07:22:41</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-01-05 14:02:20</span>
       
     
   </small>
