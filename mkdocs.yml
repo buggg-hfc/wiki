@@ -3,6 +3,9 @@ site_name: Buggg的小屋
 nav:
   - 主页:
       - 简介: index.md
+  - 日本語:
+      - 简介: 日本語/index.md
+      - 第6课: 日本語/第6课.md
   - 概率论与数理统计:
       - 简介: 概统/index.md
       - 第一章 概率论的基础知识:
