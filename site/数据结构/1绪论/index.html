@@ -1905,7 +1905,7 @@ T(n) = \begin{cases}\Theta(n^{\log_b a}) & f(n) = O(n^{\log_b a-\epsilon}) \\ \T
 <details class="note"><summary>证明</summary><p>依据上文提到的证明思路，具体证明过程如下</p>
 <p>对于第 <span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> 层（最高层），合并子问题需要花费 <span class="arithmatex"><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> 的时间</p>
 <p>对于第 <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> 层（第一次划分出来的子问题），共有 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 个子问题，每个子问题合并需要花费 <span class="arithmatex"><span class="MathJax_Preview">f\left(\frac{n}{b}\right)</span><script type="math/tex">f\left(\frac{n}{b}\right)</script></span> 的时间，所以合并总共要花费 <span class="arithmatex"><span class="MathJax_Preview">a f\left(\frac{n}{b}\right)</span><script type="math/tex">a f\left(\frac{n}{b}\right)</script></span> 的时间。</p>
-<p>层层递推，我们可以写出类推树如下：<img alt="" src="./数据结构/images/master-theorem-proof.svg" /></p>
+<p>层层递推，我们可以写出类推树如下：<img alt="" src="../images/master-theorem-proof.svg" /></p>
 <p>这棵树的高度为 <span class="arithmatex"><span class="MathJax_Preview">{\log_b n}</span><script type="math/tex">{\log_b n}</script></span>，共有 <span class="arithmatex"><span class="MathJax_Preview">n^{\log_b a}</span><script type="math/tex">n^{\log_b a}</script></span> 个叶子，从而 <span class="arithmatex"><span class="MathJax_Preview">T(n) = \Theta(n^{\log_b a}) + g(n)</span><script type="math/tex">T(n) = \Theta(n^{\log_b a}) + g(n)</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">g(n) = \sum_{j = 0}^{\log_{b}{n - 1}} a^{j} f(n / b^{j})</span><script type="math/tex">g(n) = \sum_{j = 0}^{\log_{b}{n - 1}} a^{j} f(n / b^{j})</script></span>。</p>
 <p>针对于第一种情况：<span class="arithmatex"><span class="MathJax_Preview">f(n) = O(n^{\log_b a-\epsilon})</span><script type="math/tex">f(n) = O(n^{\log_b a-\epsilon})</script></span>，因此 <span class="arithmatex"><span class="MathJax_Preview">g(n) = O(n^{\log_b a})</span><script type="math/tex">g(n) = O(n^{\log_b a})</script></span>。</p>
 <p>对于第二种情况而言：首先 <span class="arithmatex"><span class="MathJax_Preview">g(n) = \Omega(f(n))</span><script type="math/tex">g(n) = \Omega(f(n))</script></span>，又因为 <span class="arithmatex"><span class="MathJax_Preview">a f(\dfrac{n}{b}) \leq c f(n)</span><script type="math/tex">a f(\dfrac{n}{b}) \leq c f(n)</script></span>，只要 <span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span> 的取值是一个足够小的正数，且 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的取值足够大，因此可以推导出：<span class="arithmatex"><span class="MathJax_Preview">g(n) = O(f(n)</span><script type="math/tex">g(n) = O(f(n)</script></span>)。两侧夹逼可以得出，<span class="arithmatex"><span class="MathJax_Preview">g(n) = \Theta(f(n))</span><script type="math/tex">g(n) = \Theta(f(n))</script></span>。</p>
@@ -1921,7 +1921,7 @@ T(n) = \begin{cases}\Theta(n^{\log_b a}) & f(n) = O(n^{\log_b a-\epsilon}) \\ \T
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-02-28 15:35:52</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-02-28 15:36:27</span>
       
     
   </small>
