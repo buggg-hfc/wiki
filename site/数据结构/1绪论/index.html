@@ -1832,7 +1832,7 @@
 <tbody>
 <tr>
 <td align="center"><span class="arithmatex"><span class="MathJax_Preview">12</span><script type="math/tex">12</script></span></td>
-<td align="center"><span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span></td>
+<td align="center"><span class="arithmatex"><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span></td>
 <td align="center">常数阶</td>
 </tr>
 <tr>
@@ -1900,7 +1900,7 @@ T(n) = \begin{cases}\Theta(n^{\log_b a}) &amp; f(n) = O(n^{\log_b a-\epsilon}) \
 T(n) = \begin{cases}\Theta(n^{\log_b a}) & f(n) = O(n^{\log_b a-\epsilon}) \\ \Theta(f(n)) & f(n) = \Omega(n^{\log_b a+\epsilon})\\ \Theta(n^{\log_b a}\log^{k+1} n) & f(n)=\Theta(n^{\log_b a}\log^k n),k\ge 0 \end{cases}
 </script>
 </div>
-<p>需要注意的是，这里的第二种情况还需要满足 regularity condition, 即 <span class="arithmatex"><span class="MathJax_Preview">a f(n/b) \leq c f(n)</span><script type="math/tex">a f(n/b) \leq c f(n)</script></span>，for some constant <span class="arithmatex"><span class="MathJax_Preview">c &lt; 1</span><script type="math/tex">c < 1</script></span> and sufficiently large <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>。</p>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\Theta</span><script type="math/tex">\Theta</script></span> 表示最坏时间复杂度，需要注意的是，这里的第二种情况还需要满足 regularity condition, 即 <span class="arithmatex"><span class="MathJax_Preview">a f(n/b) \leq c f(n)</span><script type="math/tex">a f(n/b) \leq c f(n)</script></span>，for some constant <span class="arithmatex"><span class="MathJax_Preview">c &lt; 1</span><script type="math/tex">c < 1</script></span> and sufficiently large <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>。</p>
 <p>证明思路是是将规模为 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 的问题，分解为 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 个规模为 <span class="arithmatex"><span class="MathJax_Preview">(\frac{n}{b})</span><script type="math/tex">(\frac{n}{b})</script></span> 的问题，然后依次合并，直到合并到最高层。每一次合并子问题，都需要花费 <span class="arithmatex"><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> 的时间。</p>
 <details class="note"><summary>证明</summary><p>依据上文提到的证明思路，具体证明过程如下</p>
 <p>对于第 <span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> 层（最高层），合并子问题需要花费 <span class="arithmatex"><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span> 的时间</p>
@@ -1921,7 +1921,7 @@ T(n) = \begin{cases}\Theta(n^{\log_b a}) & f(n) = O(n^{\log_b a-\epsilon}) \\ \T
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-02-28 15:36:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-02-28 15:42:25</span>
       
     
   </small>
