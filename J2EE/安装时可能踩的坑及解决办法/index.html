@@ -15,7 +15,7 @@
     
     
       
-        <title>连续型随机变量及其概率密度 - Buggg的小屋</title>
+        <title>安装时可能踩的坑及解决办法 - Buggg的小屋</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              连续型随机变量及其概率密度
+              安装时可能踩的坑及解决办法
             
           </span>
         </div>
@@ -1395,8 +1395,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#-qaq-" class="md-nav__link">
-    咕咕咕（-QAQ-）
+  <a href="#textstartupbattextstartupbat" class="md-nav__link">
+    运行 \text{startup.bat}\text{startup.bat} 时闪退
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textstartupbattextstartupbat_1" class="md-nav__link">
+    运行 \text{startup.bat}\text{startup.bat} 时因端口号被占用报错
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textstartupbattextstartupbat_2" class="md-nav__link">
+    运行 \text{startup.bat}\text{startup.bat} 时出现乱码
   </a>
   
 </li>
@@ -1416,15 +1430,42 @@
                   
 
 
-<h1 id="_1">连续型随机变量及其概率密度<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="-qaq-">咕咕咕（-QAQ-）<a class="headerlink" href="#-qaq-" title="Permanent link">&para;</a></h2>
+<h1 id="_1">安装时可能踩的坑及解决办法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><strong>注意：养成好习惯，安装目录里不要有中文！</strong></p>
+<h2 id="textstartupbattextstartupbat">运行 <span class="arithmatex"><span class="MathJax_Preview">\text{startup.bat}</span><script type="math/tex">\text{startup.bat}</script></span> 时闪退<a class="headerlink" href="#textstartupbattextstartupbat" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>首先请参照文档检查环境变量是否正确配置，提供一个检查单：</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>JAVA_HOME</code> 是否正确配置，注意该变量值末尾没有 <code>\</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>CLASSPATH</code> 是否为 <code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\htmlconverter.jar</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Path</code> 中是否配置了 <code>%JAVA_HOME%\bin</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>CATALINA_HOME</code> 是否正确配置，注意该变量值末尾没有 <code>\</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>Path</code> 中是否配置了 <code>%CATALINA_HOME%\bin</code></li>
+</ul>
+</li>
+<li>
+<p>若环境变量正确配置且 <span class="arithmatex"><span class="MathJax_Preview">\text{Tomcat}</span><script type="math/tex">\text{Tomcat}</script></span> 版本为 <span class="arithmatex"><span class="MathJax_Preview">\text{10}</span><script type="math/tex">\text{10}</script></span>，则需在环境变量中添加一个 <code>JRE_HOME</code>，内容与 <code>JAVA_HOME</code> 一样</p>
+</li>
+<li>若环境变量正确配置后仍闪退，请重启电脑</li>
+</ol>
+<h2 id="textstartupbattextstartupbat_1">运行 <span class="arithmatex"><span class="MathJax_Preview">\text{startup.bat}</span><script type="math/tex">\text{startup.bat}</script></span> 时因端口号被占用报错<a class="headerlink" href="#textstartupbattextstartupbat_1" title="Permanent link">&para;</a></h2>
+<p>提供两种方法：</p>
+<ol>
+<li>杀掉占用端口号的进程：打开终端/命令提示符，输入 <code>netstat -ano|findstr 8080</code>，记下最后一列的数字；输入 <code>taskkill /T /F /PID 参数</code>，其中 <code>参数</code> 替换为刚刚记下的数字</li>
+<li>修改默认使用的端口号：打开 <span class="arithmatex"><span class="MathJax_Preview">\text{Tomcat}</span><script type="math/tex">\text{Tomcat}</script></span> 目录下的 <span class="arithmatex"><span class="MathJax_Preview">\text{conf}</span><script type="math/tex">\text{conf}</script></span> 文件夹中的 <span class="arithmatex"><span class="MathJax_Preview">\text{server.xml}</span><script type="math/tex">\text{server.xml}</script></span> 文件，即 <code>apache-tomcat-x.x.x\conf\server.xml</code>，大约在其 <span class="arithmatex"><span class="MathJax_Preview">\text{70}</span><script type="math/tex">\text{70}</script></span> 行左右，有个 <code>port="8080"</code>，将 <code>8080</code> 改成未被占用的端口号，例如 <code>8088</code>、<code>8011</code> 等等</li>
+</ol>
+<h2 id="textstartupbattextstartupbat_2">运行 <span class="arithmatex"><span class="MathJax_Preview">\text{startup.bat}</span><script type="math/tex">\text{startup.bat}</script></span> 时出现乱码<a class="headerlink" href="#textstartupbattextstartupbat_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>打开 <span class="arithmatex"><span class="MathJax_Preview">\text{Tomcat}</span><script type="math/tex">\text{Tomcat}</script></span> 目录下的 <span class="arithmatex"><span class="MathJax_Preview">\text{conf}</span><script type="math/tex">\text{conf}</script></span> 文件夹中的 <span class="arithmatex"><span class="MathJax_Preview">\text{logging.properties}</span><script type="math/tex">\text{logging.properties}</script></span> 文件，即 <code>apache-tomcat-x.x.x\conf\logging.properties</code>，大约在其 <span class="arithmatex"><span class="MathJax_Preview">\text{47-50}</span><script type="math/tex">\text{47-50}</script></span> 行，将 <code>java.util.logging.ConsoleHandler.encoding = UTF-8</code> 修改为 <code>java.util.logging.ConsoleHandler.encoding = GBK</code></li>
+</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2022-12-19 10:18:04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-02-28 14:04:05</span>
       
     
   </small>
@@ -1433,51 +1474,6 @@
 
 
 
-
-<h2 id="__comments">评论</h2>
-<!-- Insert generated snippet here -->
-<script
-  src="https://giscus.app/client.js"
-  data-repo="1216105249/wiki"
-  data-repo-id="R_kgDOHhXjfA"
-  data-category="Announcements"
-  data-category-id="DIC_kwDOHhXjfM4CTJaR"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="1"
-  data-input-position="top"
-  data-theme="preferred_color_scheme"
-  data-lang="zh-CN"
-  crossorigin="anonymous"
-  async
-></script>
-<!-- Synchronize Giscus theme with palette -->
-<script>
-  var giscus = document.querySelector("script[src*=giscus]");
-
-  /* Set palette on initial load */
-  var palette = __md_get("__palette");
-  if (palette && typeof palette.color === "object") {
-    var theme = palette.color.scheme === "slate" ? "dark" : "light";
-    giscus.setAttribute("data-theme", theme);
-  }
-
-  /* Register event handlers after documented loaded */
-  document.addEventListener("DOMContentLoaded", function () {
-    var ref = document.querySelector("[data-md-component=palette]");
-    ref.addEventListener("change", function () {
-      var palette = __md_get("__palette");
-      if (palette && typeof palette.color === "object") {
-        var theme = palette.color.scheme === "slate" ? "dark" : "light";
-
-        /* Instruct Giscus to change theme */
-        var frame = document.querySelector(".giscus-frame");
-        frame.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, "https://giscus.app");
-      }
-    });
-  });
-</script>
 
                 
               </article>
