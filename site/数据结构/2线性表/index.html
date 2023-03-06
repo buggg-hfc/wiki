@@ -598,6 +598,26 @@
     总结
   </a>
   
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    两种存储结构的理解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    两种存储结构的对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1640,6 +1660,26 @@
     总结
   </a>
   
+    <nav class="md-nav" aria-label="总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    两种存储结构的理解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    两种存储结构的对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1693,7 +1733,7 @@
 <li>一维数组也是用一组 <strong>地址连续</strong> 的存储单元存放数据</li>
 <li>一组数组中的数据元素也可以通过数组下标 <strong>随机存取</strong></li>
 </ol>
-<p>因此，可以用一维数组来描述顺序表，本文使用类模板的方式，具体的定义和操作代码如下：</p>
+<p>因此，可以用一维数组来描述顺序表，本文使用模板类的方式，具体的定义和操作代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1802,28 +1842,36 @@
 <h3 id="_12">双向链表<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>待补充</p>
 <h2 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">两种存储结构的理解<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>我们可以用警匪片中的组织关系来理解顺序表的两种存储结构的区别：</p>
 <p>在许多警匪片中，警方的组织纪律严明，每个支队都分配有一个编号（下标）和值守的辖区（地址），为了便于管理，常常让编号相邻的支队值守的辖区也相邻（逻辑相邻，物理地址也相邻）。如果要查询某个支队所值守的辖区，只需要知道编号即可直接算出（通过下标直接算出地址）；如果要某个支队要去执行任务，需要删除相关信息，那么它所值守的辖区就无人值守，因此在它之后的支队所所值守的辖区均需往前挪一格（删除某个结点影响到在它之后的所有结点。需要注意的是：最后一个支队值守的辖区就无人值守了，逻辑上我们可以认为该辖区已经无需值守，但实际上仍然存在，即逻辑上删除，物理上存在）。那么这其实就是顺序表结构。</p>
 <p>在黑帮势力中，每名黑帮分子都有一个编号（下标）和一个藏身处（地址），为了避免通过编号查出藏身处（通过下标索引查询地址），黑帮分子的藏身处与他们的编号不一定有关联（逻辑相邻，物理地址不一定相邻）。而为了降低被同伙出卖的风险，黑帮内会保持 <strong>单向单线联络</strong>，即每个人最多只有一个上线，一个下线，只有上线知道下线的藏身处（前驱结点记录直接后继结点的地址），那么只有上线可以联络下线。如果要警方要找到某一名黑帮分子的藏身处，就需要抓到黑帮头头，问出他的下线藏身处，以此循环，知道问出要找的那名黑帮分子为止（查询某一结点信息，需要从头结点开始按顺序往后依次查询）；如果黑帮中新加入一名成员，那么只需要先给他指派一名下线，再指派一名上线即可（单链表的插入操作，可以复习一下课上内容）。那么这其实就是单链表结构。</p>
 <p>其他更为复杂的链表也可以用类似的类比来帮助理解，在此暂不进行展开叙述。</p>
+<h3 id="_15">两种存储结构的对比<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th align="center">存储结构</th>
-<th align="center">查询</th>
-<th align="center">修改</th>
+<th align="center">存储分配方式</th>
+<th align="center">时间性能 - 查询</th>
+<th align="center">时间性能 - 修改</th>
+<th align="center">空间性能</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center">顺序存储结构</td>
+<td align="center">连续的存储单元</td>
 <td align="center"><span class="arithmatex"><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span></td>
 <td align="center"><span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></td>
+<td align="center">预分配，容易浪费或越界</td>
 </tr>
 <tr>
 <td align="center">链式存储结构</td>
+<td align="center">任意的存储单元</td>
 <td align="center"><span class="arithmatex"><span class="MathJax_Preview">O(n)</span><script type="math/tex">O(n)</script></span></td>
 <td align="center"><span class="arithmatex"><span class="MathJax_Preview">O(1)</span><script type="math/tex">O(1)</script></span></td>
+<td align="center">动态分配，不受限制</td>
 </tr>
 </tbody>
 </table>
@@ -1833,7 +1881,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-03-06 10:56:27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-03-06 11:06:26</span>
       
     
   </small>
