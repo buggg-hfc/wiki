@@ -1668,9 +1668,9 @@
 <ul>
 <li><code>线性表的顺序存储结构</code>: 用一段 <strong>地址连续</strong> 的存储单元依次存储线性表的数据元素，简称为 <strong>顺序表</strong></li>
 </ul>
-<details class="note" open="open"><summary>数组长度与线性表长度的区别</summary><p>数组的长度是存放线性表的储存空间的长度，存储分配后这个量一般是不变的（通过可变长数组类型也可以改变，但是会带来一定的性能损耗）
-线性表长度是线性表中数据元素的个数，随着线性表插入和删除操作的进行，这个量是变化的
-在任意时刻，线性表长度应该小于等于数组长度</p>
+<details class="note" open="open"><summary>数组长度与线性表长度的区别</summary><p>数组的长度是存放线性表的储存空间的长度，存储分配后这个量一般是不变的（通过可变长数组类型也可以改变，但是会带来一定的性能损耗）</p>
+<p>线性表长度是线性表中数据元素的个数，随着线性表插入和删除操作的进行，这个量是变化的</p>
+<p>在任意时刻，线性表长度应该小于等于数组长度</p>
 </details>
 <h3 id="_5">地址计算方式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>存储器中的每个存储单元都有自己的编号，这个编号称为地址</p>
@@ -1694,48 +1694,88 @@
 <li>一组数组中的数据元素也可以通过数组下标 <strong>随机存取</strong></li>
 </ol>
 <p>因此，可以用一维数组来描述顺序表，本文使用 <code>vector</code> 可变长数组来定义一维数组，这样可以将重点放在数据结构的原理上而不是语法上，具体的定义和操作代码如下：</p>
-<p><code>cpp linenums=1
-template&lt;typename T&gt;
-struct Array{
-  // 初始化顺序表
-  int length=0;
-  vector&lt;T&gt; a;
-  // 销毁顺序表
-  void delete_all(){
-    a.resize(0);
-  }
-  // 顺序表插入数据元素
-  void insert(int k,T e){
-    a.push_back(0);
-    length++;
-    for(int i=length-1;i&gt;=k+1;i—-){
-      a[i]=a[i-1];
-    }
-    a[k]=e;
-  }
-  // 顺序表删除数据元素
-  void delete(int k){
-    for(int i=k;i&lt;length-1;i++){
-      a[i]=a[i+1];
-    }
-    a.pop_back();
-    length—-;
-  }
-  // 顺序表范围数据元素的位置i
-  int get_index(T e){
-    for(int i=0;i&lt;length;i++){
-      if(a[i]==e){
-        return i;
-      }
-    }
-    return -1;
-  }
-  // 顺序表返回第i个位置的数据元素的值
-  int get_element(int i){
-    if(i&lt;0||i&gt;=length)return -1;
-    return a[i];
-  }
-}</code></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Array</span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 初始化顺序表</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// 销毁顺序表</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">delete_all</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// 顺序表插入数据元素</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="n">T</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">length</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">length</span><span class="mi">-1</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="err">—</span><span class="o">-</span><span class="p">){</span>
+<span class="w">      </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">e</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// 顺序表删除数据元素</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">){</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">k</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">length</span><span class="mi">-1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">      </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="w">    </span><span class="n">length</span><span class="err">—</span><span class="o">-</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// 顺序表范围数据元素的位置i</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">get_index</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">e</span><span class="p">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// 顺序表返回第i个位置的数据元素的值</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">get_element</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">||</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">length</span><span class="p">)</span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="_7">线性表的链式存储结构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="_8">定义<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>在顺序结构中，每个数据元素只需要存储数据元素信息就可以了，而在链式结构中，除了要存储数据元素信息，还要存储它的后继元素的存储地址</p>
@@ -1781,7 +1821,7 @@ struct Array{
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-03-06 10:17:28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-03-06 10:20:13</span>
       
     
   </small>
