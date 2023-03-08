@@ -1734,7 +1734,7 @@
 <li>一组数组中的数据元素也可以通过数组下标 <strong>随机存取</strong></li>
 </ol>
 <p>因此，可以用一维数组来描述顺序表，本文使用模板类的方式，具体的定义和操作代码如下：</p>
-<details class="- note"><summary>顺序表代码</summary><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<details class="- note"><summary>顺序表实现</summary><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1835,13 +1835,168 @@
 </ul>
 <p>在链式存储结构中，逻辑上相邻的两个数据元素其存储的物理位置不一定相邻，这种存储结构称为 <strong>非顺序映像</strong> 或 <strong>链式映像</strong></p>
 <h3 id="_9">单链表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>待补充</p>
+<ul>
+<li>单向链表中包含数据域和指针域，其中数据域用于存放数据，指针域用来连接当前结点和下一节点</li>
+<li>插入元素流程<ol>
+<li>初始化待插入的数据 <code>node</code></li>
+<li>将 <code>node</code> 的 <code>next</code> 指针指向 <code>p</code> 的下一个结点</li>
+<li>将 <code>p</code> 的 <code>next</code> 指针指向 <code>node</code></li>
+</ol>
+</li>
+<li>删除元素流程<ol>
+<li>将 <code>p</code> 下一个结点的值赋给 <code>p</code>，以抹掉 <code>p-&gt;value</code></li>
+<li>新建一个临时结点 <code>t</code> 存放 <code>p-&gt;next</code> 的地址</li>
+<li>将 <code>p</code> 的 <code>next</code> 指针指向 <code>p</code> 的下下个结点，以抹掉 <code>p-&gt;next</code></li>
+<li>删除 <code>t</code>。此时虽然原结点 <code>p</code> 的地址还在使用，删除的是原结点 <code>p-&gt;next</code> 的地址，但 <code>p</code> 的数据被 <code>p-&gt;next</code> 覆盖，<code>p</code> 名存实亡</li>
+</ol>
+</li>
+</ul>
+<details class="- note"><summary>单链表实现</summary><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 构建链表</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// 插入元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">insertNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
+<span class="w">    </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 删除元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">deleteNode</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <h3 id="_10">静态链表（数组模拟链表）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>待补充</p>
+<p>静态链表即使用数组模拟链表，代码与普通单链表类似，将指针改为数组即可，此处不详细展开</p>
 <h3 id="_11">循环链表<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>待补充</p>
+<p>此文仅讨论单向循环链表，将链表的头尾连接起来，链表就变成了循环链表。</p>
+<p>插入元素：由于链表首尾相连，在插入数据时需要判断原链表是否为空：为空则自身循环，不为空则正常插入数据</p>
+<ol>
+<li>初始化待插入的数据 <code>node</code></li>
+<li>判断给定链表 <code>p</code> 是否为空</li>
+<li>若为空，则将 <code>node</code> 的 <code>next</code> 指针和 <code>p</code> 都指向自己</li>
+<li>否则，将 <code>node</code> 的 <code>next</code> 指针指向 <code>p</code> 的下一个结点</li>
+<li>将 <code>p</code> 的 <code>next</code> 指针指向 <code>node</code></li>
+</ol>
+<p>删除元素：设待删除结点为 <code>p</code>，从链表中删除它时，将 <code>p</code> 的下一个结点 <code>p-&gt;next</code> 的值覆盖给 <code>p</code> 即可，与此同时更新 <code>p</code> 的下下个结点</p>
+<details class="- note"><summary>单向循环链表实现</summary><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 构建链表</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// 插入元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">insertNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
+<span class="w">    </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<span class="w">        </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">        </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// 删除元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">deleteNode</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <h3 id="_12">双向链表<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>待补充</p>
+<ul>
+<li>双向链表是在单链表的每个结点中，再设置一个指向其前驱结点的指针域</li>
+</ul>
+<details class="- note"><summary>双向链表实现</summary><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 构建链表</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">prior</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// 插入元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">insertNode</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 删除元素</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">deleteNode</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">prior</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">prior</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
 <h2 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <h3 id="_14">两种存储结构的理解<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>我们可以用警匪片中的组织关系来理解顺序表的两种存储结构的区别：</p>
@@ -1884,7 +2039,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-03-06 11:16:33</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-03-08 13:23:24</span>
       
     
   </small>
