@@ -3,6 +3,9 @@ site_name: Buggg的小屋
 nav:
   - 主页:
       - 简介: index.md
+  - 读书计划:
+      - 简介: 读书计划/index.md
+      - 目录: 读书计划/menu.md
   #   - 日本語:
   #       - 简介: 日本語/index.md
   #       - 第6课: 日本語/第6课.md
@@ -29,10 +32,13 @@ nav:
   #   - 汇编:
   #       - 0 简介: 汇编/index.md
   #       - 1 基础知识: 汇编/1基础知识.md
-  - 数据结构:
-      - 简介: 数据结构/index.md
-      - 绪论: 数据结构/1绪论.md
-      - 线性表: 数据结构/2线性表.md
+  # - 数据结构:
+  #     - 简介: 数据结构/index.md
+  #     - 绪论: 数据结构/1绪论.md
+  #     - 线性表: 数据结构/2线性表.md
+  # - 计算机网络:
+  #     - 简介: 计算机网络/index.md
+  #     - 作业1: 计算机网络/作业1.md
   - Java:
       - 0 简介: Java/index.md
       - 1 变量、运算符、表达式、输入与输出: Java/1变量、运算符、表达式、输入与输出.md
@@ -64,9 +70,9 @@ nav:
       - 201512第6次: CSP/第6次.md
       - 201604第7次: CSP/第7次.md
       - 202209第27次: CSP/第27次.md
-  - 题目整理:
-      - 简介: 题目整理/index.md
-      - Educational Codeforces Round: 题目整理/educational.md
+  # - 题目整理:
+  #     - 简介: 题目整理/index.md
+  #     - Educational Codeforces Round: 题目整理/educational.md
   - 中学知识:
       - 简介: 中学/index.md
       - 初中:
