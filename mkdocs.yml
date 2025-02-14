@@ -90,7 +90,7 @@ nav:
               - 拓展部分: 中学/高中/地理/拓展部分/拓展部分.md
               - 专题: 中学/高中/地理/专题/专题.md
 
-repo_url: https://github.com/1216105249/wiki
+repo_url: https://github.com/buggg-hfc/wiki
 
 theme:
   custom_dir: overrides
@@ -151,13 +151,13 @@ extra:
   generator: true
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/1216105249
+      link: https://github.com/buggg-hfc
       name: Github
     - icon: fontawesome/solid/paper-plane
       link: mailto:<bugcat.hfc@qq.com>
       name: 邮箱
 
-copyright: Copyright &copy; 2022 Buggg的小屋
+copyright: Copyright &copy; 2022-2025 Buggg的小屋
 
 edit_uri: ""
 
