@@ -3,9 +3,11 @@ site_name: Buggg的小屋
 nav:
   - 主页:
       - 简介: index.md
-  - 读书计划:
-      - 简介: 读书计划/index.md
-      - 目录: 读书计划/menu.md
+  - 个人记录:
+      - 简介: 个人记录/index.md
+      - 书籍: 个人记录/book.md
+      - 游戏: 个人记录/game.md
+      - 电影: 个人记录/movie.md
   #   - 日本語:
   #       - 简介: 日本語/index.md
   #       - 第6课: 日本語/第6课.md
@@ -89,6 +91,8 @@ nav:
               - 人文地理: 中学/高中/地理/人文地理/人文地理.md
               - 拓展部分: 中学/高中/地理/拓展部分/拓展部分.md
               - 专题: 中学/高中/地理/专题/专题.md
+  - NJUST资料:
+      - 简介: NJUST资料/index.md
 
 repo_url: https://github.com/buggg-hfc/wiki
 
